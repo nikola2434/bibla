@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/auth": "pages/auth.js",
+  "/trending": "pages/trending.js",
+  "/MyBooks": "pages/MyBooks.js",
+  "/genre/[slug]": "pages/genre/[slug].js",
+  "/404": "pages/404.js"
+}

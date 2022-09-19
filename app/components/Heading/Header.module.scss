@@ -1,0 +1,19 @@
+@import "../layout/layout.module.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inspiration&family=Oleo+Script+Swash+Caps:wght@400;700&display=swap");
+.heading {
+  font-size: 30px;
+  font-weight: 400;
+  color: $secondary_color;
+  font-family: "Roboto", sans-serif;
+  margin-left: 25px;
+}
+.subtitle {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  color: $secondary_color;
+  font-family: "Roboto", sans-serif;
+  margin-left: 25px;
+}
+    

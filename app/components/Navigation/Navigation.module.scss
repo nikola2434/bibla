@@ -1,0 +1,17 @@
+@import "../layout/layout.module.scss";
+.navigation {
+  width: 20%;
+  border-right: 2px solid $mail_color;
+  max-width: 350px;
+  background-color: white;
+  .container_menu {
+    display: block;
+    > div:first-child {
+      margin-bottom: 30px;
+    }
+    > div:last-child {
+      position: absolute;
+      bottom: 30px;
+    }
+  }
+}

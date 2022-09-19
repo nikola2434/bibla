@@ -1,0 +1,35 @@
+@import "../../layout/layout.module.scss";
+.button {
+  width: 100%;
+  padding: 5px 20px;
+  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  background: none;
+
+  border-radius: 5px;
+}
+
+.button_style_1 {
+  color: $mail_color;
+  background-color: white;
+  border: $mail_color solid 2px;
+  &:hover {
+    color: $secondary_color;
+    background-color: $mail_color;
+    transition: all 0.2s linear;
+  }
+}
+
+.button_style_2 {
+  color: $secondary_color;
+  background-color: $mail_color;
+  border: $secondary_color solid 2px;
+  &:hover {
+    color: $mail_color;
+    background-color: $secondary_color;
+    transition: all 0.2s linear;
+  }
+}

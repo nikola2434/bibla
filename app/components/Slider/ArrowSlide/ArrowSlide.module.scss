@@ -1,0 +1,24 @@
+@import "../../layout/layout.module.scss";
+.arrow {
+  position: absolute;
+  border: none;
+  outline: none;
+  background-color: rgba($color_hover, $alpha: 0.5);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: $secondary_color;
+  border-radius: 80%;
+  width: 30px;
+  height: 30px;
+}
+.next {
+  right: 100px;
+  bottom: 40px;
+}
+.back {
+  bottom: 40px;
+  right: 150px;
+}

@@ -1,0 +1,15 @@
+$mail_color: #43acf9;
+$secondary_color: #0957b4;
+$color_gold: #ffd700;
+$color_hover: #deedf8;
+.layout {
+  display: flex;
+  max-width: 100%;
+  height: 100vh;
+  justify-content: space-between;
+  .center {
+    width: 100%;
+    max-width: 70%;
+    margin: 0 15;
+  }
+}

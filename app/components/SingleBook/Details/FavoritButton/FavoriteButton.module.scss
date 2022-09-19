@@ -1,0 +1,33 @@
+@import "../../../layout/layout.module.scss";
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .heart {
+    font-size: 30px;
+    outline: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+      animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite
+        alternate;
+    }
+  }
+  .favorite {
+    color: darken(#fb7e6e, 30%);
+  }
+  .not_favorite {
+    color: $secondary_color;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+} ;

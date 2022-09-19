@@ -1,0 +1,29 @@
+@import "../../../layout/layout.module.scss";
+.list {
+  display: block;
+  position: absolute;
+  top: calc(100%);
+  width: 100%;
+  z-index: 10;
+  border: 2px solid $secondary_color;
+  padding: 5px;
+  border-radius: 7px;
+  margin-top: 5px;
+  opacity: 0;
+  transition: 0.4s;
+  animation: show 0.5s 1;
+  animation-fill-mode: forwards;
+  background-color: white;
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .message {
+    text-align: center;
+    height: 30px;
+  }
+}

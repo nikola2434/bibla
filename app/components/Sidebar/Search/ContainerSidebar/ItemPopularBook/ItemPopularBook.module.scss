@@ -1,0 +1,57 @@
+@import "../../../../layout/layout.module.scss";
+.popular_book {
+  display: flex;
+  justify-content: start;
+
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  &:hover {
+    background-color: $color_hover;
+    transition: 0.4s linear;
+  }
+
+  .image {
+    border-radius: 5px;
+  }
+  .container_characteristics {
+    margin-left: 5px;
+    display: block;
+
+    .title {
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+      white-space: nowrap;
+      color: $secondary_color;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      width: 100px;
+    }
+    .genre {
+      font-size: 14px;
+      display: inline-block;
+      font-style: italic;
+
+      &::after {
+        content: "";
+        display: block;
+        background-color: black;
+        height: 1px;
+        opacity: 0;
+      }
+      &:hover::after {
+        opacity: 1;
+        transition: 0.3s linear;
+      }
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+      .star {
+        color: $color_gold;
+      }
+    }
+  }
+}

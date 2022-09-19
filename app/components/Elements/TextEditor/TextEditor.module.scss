@@ -1,0 +1,64 @@
+@import "../../layout/layout.module.scss";
+.editor_text {
+  margin: 25px;
+  display: block;
+  z-index: -20;
+
+  .placeholder {
+    display: block;
+    font-size: 24px;
+    color: $secondary_color;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+    .editor {
+      width: 100%;
+    }
+  }
+}
+.editor_style {
+  border: $secondary_color solid 2px;
+  min-height: 200px;
+  border-radius: 10px;
+  padding: 0px 10px;
+  color: $mail_color;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  box-sizing: border-box;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  height: 200px;
+  z-index: -1;
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(180deg, #08519e, #005bea);
+  }
+}
+.tool_bar {
+  border-radius: 10px;
+  border: $secondary_color solid 2px;
+  background-color: $color_hover;
+  margin-bottom: 0;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+
+  > div {
+    > div {
+      background: none;
+      border: 0;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "../layout/layout.module.scss";
+.sidebar {
+  width: 20%;
+  border-left: 2px solid $mail_color;
+  max-width: 350px;
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 5px 0px 15px;
+}

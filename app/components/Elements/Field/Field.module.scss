@@ -1,0 +1,49 @@
+@import "../../layout/layout.module.scss";
+.field {
+  width: 100%;
+  margin: 0 0px 30px;
+  .error_input {
+    border-bottom: red solid 2px;
+  }
+
+  .placeholder {
+    font-size: 22px;
+    color: $secondary_color;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .input {
+    width: 100%;
+    padding: 7px 10px;
+    border: none;
+    border-bottom: $mail_color solid 2px;
+    outline-offset: 0;
+    color: $mail_color;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+
+    &:focus {
+      border-bottom: $secondary_color solid 2px;
+    }
+    &:hover {
+      border-bottom: $secondary_color solid 2px;
+      transition: 0.2s linear;
+    }
+  }
+  .error_input {
+    border-bottom: red solid 2px;
+    &:focus,
+    &:hover {
+      border-bottom: red solid 2px;
+    }
+  }
+  .error {
+    margin-top: 5px;
+    margin-left: 10px;
+    color: red;
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+  }
+}

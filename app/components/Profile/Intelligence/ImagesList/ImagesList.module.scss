@@ -1,0 +1,53 @@
+@import "../../../layout/layout.module.scss";
+.images_list {
+  position: absolute;
+  top: 250px;
+  left: 20;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 265px;
+  max-height: 170px;
+  overflow-y: auto;
+  animation: show 0.5s 1;
+  animation-fill-mode: forwards;
+  border: $secondary_color 2px solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  .image {
+    cursor: pointer;
+    border-radius: 5px;
+
+    .poster {
+      z-index: -1;
+    }
+    &:hover {
+      box-shadow: inset 0 -20px 50px -5px rgba(78, 157, 247, 0.6);
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(180deg, #08519e, #005bea);
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}

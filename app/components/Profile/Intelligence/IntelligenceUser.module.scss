@@ -1,0 +1,99 @@
+@import "../../layout/layout.module.scss";
+.intelligence {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  .image {
+    border: $secondary_color 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    position: relative;
+    > button {
+      outline: none;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-color: $color_hover;
+      border-radius: 10px;
+      color: $secondary_color;
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+      z-index: 1;
+    }
+    &:hover button {
+      opacity: 1;
+    }
+  }
+  .intelligence_container {
+    margin-left: 10%;
+    width: 60%;
+    .login_container {
+      position: relative;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .login {
+        font-size: 30px;
+        font-family: "Roboto", sans-serif;
+        color: $secondary_color;
+      }
+      > button {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        background: transparent;
+        font-size: 24px;
+        color: $secondary_color;
+        transition: 0.3s linear;
+        &:hover {
+          color: $mail_color;
+        }
+      }
+      .active {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .fields {
+        width: 90%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        animation: show 0.5s 1;
+        animation-fill-mode: forwards;
+      }
+    }
+    .role {
+      margin-top: 10px;
+      font-size: 20px;
+      font-family: "Roboto", sans-serif;
+      color: $mail_color;
+    }
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../layout/layout.module.scss";
+.details {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 30px;
+  .image {
+    box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 250px;
+    border-radius: 10px;
+    margin-right: 30px;
+    .poster {
+      border-radius: 10px;
+    }
+  }
+  .characteristics {
+    display: block;
+    position: relative;
+    .favorite {
+      position: absolute;
+      top: 20px;
+      right: -50px;
+    }
+    .author {
+      color: $secondary_color;
+      font-size: 45px;
+      font-family: "Oleo Script Swash Caps", cursive;
+      display: block;
+    }
+    .genre {
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      display: inline-block;
+      &::after {
+        content: "";
+        display: block;
+        background-color: black;
+        height: 1px;
+        opacity: 0;
+      }
+      &:hover::after {
+        opacity: 1;
+        transition: 0.3s linear;
+      }
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      margin-top: 20px;
+      font-family: "Roboto", sans-serif;
+      .star {
+        color: $color_gold;
+        margin-right: 10px;
+      }
+    }
+  }
+}

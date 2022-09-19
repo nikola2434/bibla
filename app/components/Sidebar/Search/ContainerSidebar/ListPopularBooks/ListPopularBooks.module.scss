@@ -1,0 +1,32 @@
+@import "../../../../layout/layout.module.scss";
+
+.heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  color: $secondary_color;
+  margin-top: 20px;
+}
+
+.list_popular_book {
+  display: block;
+  width: 100%;
+}
+
+.button {
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  background-color: $mail_color;
+  border-radius: 10px;
+  color: $secondary_color;
+  border: $secondary_color 2px solid;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: $secondary_color;
+    color: $mail_color;
+    transition: 0.3s linear;
+  }
+}

@@ -1,0 +1,66 @@
+@import "../../layout/layout.module.scss";
+.navigation {
+  display: flex;
+  margin-top: 2%;
+  max-width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: $secondary_color 2px solid;
+  background-color: white;
+  height: 50px;
+  border-radius: 10px;
+
+  .default {
+    color: $secondary_color;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    // &:hover {
+    //   background-color: $color_hover;
+    //   transition: 0.2s linear;
+    //   color: $mail_color;
+    // }
+    &::after {
+      display: block;
+      content: "";
+      width: 60%;
+      margin-top: 3px;
+      background-color: $secondary_color;
+      height: 3px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 2px;
+      opacity: 0;
+    }
+    &:hover::after {
+      opacity: 1;
+      transition: 0.3s linear;
+    }
+  }
+
+  .active {
+    &::after {
+      display: block;
+      content: "";
+      width: 60%;
+      margin-top: 3px;
+      background-color: $secondary_color;
+      height: 3px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 2px;
+      z-index: 2;
+      opacity: 1;
+    }
+  }
+}

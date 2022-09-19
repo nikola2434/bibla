@@ -1,0 +1,21 @@
+@import "../../layout/layout.module.scss";
+.fieldLink {
+  position: relative;
+  width: 100%;
+  .button {
+    position: absolute;
+    cursor: pointer;
+    text-transform: uppercase;
+    top: 40px;
+    right: 10px;
+    border: $secondary_color solid 2px;
+    border-radius: 40px;
+    padding: 0 5px;
+    color: $secondary_color;
+    font-family: "Roboto", sans-serif;
+    &:hover {
+      background-color: $color_hover;
+      transition: 0.3s linear;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.genre_edit {
+  display: flex;
+
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  .field {
+    width: 32%;
+  }
+}
+.select {
+  margin: 20px 25px;
+}
+
+.update {
+  display: block;
+  margin: 0px 20px;
+  max-width: 150px;
+}

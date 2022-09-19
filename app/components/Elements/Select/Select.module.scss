@@ -1,0 +1,14 @@
+@import "../../layout/layout.module.scss";
+.select {
+  .placeholder {
+    display: block;
+    font-size: 24px;
+    color: $secondary_color;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .react_select {
+    
+  }
+}

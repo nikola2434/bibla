@@ -1,0 +1,14 @@
+.admin_users {
+  display: block;
+  width: 100%;
+  .search {
+    width: 25%;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  .table {
+    display: block;
+    width: 100%;
+    padding: 5px 15px;
+  }
+}
