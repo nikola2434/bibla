@@ -1,0 +1,466 @@
+{
+  "bookGenres": [
+    {
+      "title": "Detective",
+      "icons": "MdSearch",
+      "link": "detective",
+      "books": [
+        "BlackCoffee",
+        "SherlockHolmes"
+      ],
+      "description": "The most complex mysteries and haunting secrets, colorful characters and unexpected plot twists: a good detective story will never make you bored.",
+      "id": "Detective"
+    },
+    {
+      "title": "Novel",
+      "icons": "MdVolunteerActivism",
+      "link": "novel",
+      "books": [
+        "TheThornBirds",
+        "TheCrimsonPetalandtheWhite",
+        "MartinEden",
+        "f183322b931a"
+      ],
+      "description": "Love, love, love ... How much in this word! Each of us from time to time wants to plunge into the world of vivid feelings and passions.",
+      "id": "Novel"
+    },
+    {
+      "title": "Adventure",
+      "icons": "MdOutlineHiking",
+      "link": "adventure",
+      "books": [
+        "WhiteFang",
+        "LesTroisMousquetaires"
+      ],
+      "id": "Adventure",
+      "description": "Let's travel right now!"
+    },
+    {
+      "title": "Thriller",
+      "link": "thriller",
+      "icons": "MdOutlineMoodBad",
+      "id": "Thriller",
+      "books": [
+        "Horns",
+        "Heart-ShapedBox",
+        "TheCallofCthulhu "
+      ],
+      "description": "Fans of action fiction are not so easy to surprise or scare, because it is quite difficult to make a person experience a feeling of true fear only after reading the work, but these books can do it."
+    },
+    {
+      "title": "Fantasy",
+      "link": "fantasy",
+      "icons": "MdOutlineAutoFixHigh",
+      "id": "Fantasy",
+      "books": [
+        "AmericanGods",
+        "Neverwhere",
+        "Sojourn",
+        "Exile",
+        "Homeland"
+      ],
+      "description": "Do you love fantasy?:)"
+    },
+    {
+      "title": "Science-fiction",
+      "link": "science-fiction",
+      "icons": "MdOutlinePsychology",
+      "id": "Science-fiction",
+      "books": [
+        "Blindsight"
+      ],
+      "description": "Captivating tales of space adventure, or terrifying fantasies of a robotic future, or an introspective look at what it really means to be human."
+    },
+    {
+      "title": "Non—fiction",
+      "icons": "MdOutlinePrecisionManufacturing",
+      "link": "Non-Fiction",
+      "books": [
+        "ProfessionalTypeScript"
+      ],
+      "description": "Self-development is a difficult path that cannot be passed to the end, but it is only necessary to interrupt the movement for a short time, as you are thrown back.",
+      "id": "Non—fiction"
+    }
+  ],
+  "books": [
+    {
+      "title": "Horns",
+      "author": "Joe Hill",
+      "rating": 7.87,
+      "genre": "Thriller",
+      "id": "Horns",
+      "poster": "https://s1.livelib.ru/boocover/1002894334/200/a078/boocover.jpg",
+      "description": "Ig Perrish has been under the pressure of public opinion for a whole year and desperately feels that he is not guilty of the death of his girlfriend - Merrin. In the end, on the anniversary of the death of his girlfriend, he, completely desperate, has a series of blasphemous actions, which is why his horns begin to grow, and he is endowed with the gift of expressing people, telling him the most vile desires and already committed deeds. After that, he gets to the bottom of the truth: who killed his girlfriend ..."
+    },
+    {
+      "title": " Heart-Shaped Box",
+      "poster": "https://knijky.ru/sites/default/files/styles/132x195/public/dzho_hill_korobka_v_forme_serdtsa.jpg?itok=0ui-XLWE",
+      "author": "Joe Hill",
+      "genre": "Thriller",
+      "description": "Jude Coyne is a rock star whose best years are behind him. Behind and drinking, and drug orgies, and countless changes of girlfriends... But this is only at first glance. In fact, the past can haunt a person throughout life. And Jude realizes this when he buys a ghost at an online auction. More precisely, a costume that comes with a ghost. And then a well-established life flies somersaults ...",
+      "rating": 7.18,
+      "id": "Heart-ShapedBox"
+    },
+    {
+      "title": "  The Call of Cthulhu ",
+      "author": "Howard Phillips Lovecraf",
+      "rating": 8.08,
+      "genre": "Thriller",
+      "id": "TheCallofCthulhu",
+      "poster": "https://static.insales-cdn.com/images/products/1/4658/299315762/1.jpg",
+      "description": "After a terrible earthquake, close associates of the great Cthulhu awaken from their eternal sleep. Yes, and the Ruler of antiquity himself rises to the surface of the waters along with his abode - the gloomy city of R'leich. Subtly feeling people stop sleeping, artists write the incredible, the weak go crazy ... “In his house in R’leich, the dead Cthulhu will wake up at the appointed hour,” the followers of an ancient cult sing, making human sacrifices ...Cthulhu sinks to the bottom and goes back to sleep, but for how long?.."
+    },
+    {
+      "title": " Black Coffee",
+      "author": "Agatha Christie",
+      "rating": 7.57,
+      "genre": "Detective",
+      "id": "BlackCoffee",
+      "poster": "https://img4.labirint.ru/rc/617f98e51851f7c7b0675c6b35da629f/363x561q80/books83/828262/cover.jpg?1634369128",
+      "description": "Black Coffee is a novel based on the play of the same name by Agatha Christie. The play first appeared on the stage in 1930. The famous physicist Sir Claude Emory turns to Poirot for help. However, Poirot and Hastings do not have time to see him - the scientist is poisoned. At the same time, the formula of a super-powerful explosive discovered by him disappeared ..."
+    },
+    {
+      "title": "Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "rating": 9.42,
+      "genre": "Detective",
+      "id": "SherlockHolmes",
+      "poster": "https://cdn1.ozone.ru/multimedia/1000279566.jpg",
+      "description": "This story is about one of the greatest detectives of our time, written by his friend and partner.A resident of an unsightly house on Baker Street solves the most difficult cases one by one, easily transforms into bandits, booksellers, chimney sweeps...Yes, several times Sherlock is on the brink of death. But how can death defeat the Great Investigator? Never! Especially if ahead - eternity. Eternal life in the hearts of millions and millions of readers who will never forget either the Reichenbach Falls, or the stupid Inspector Lestrade, or the faithful Watson, or the house on Baker Street ..."
+    },
+    {
+      "title": "The Thorn Birds",
+      "author": "Colleen McCullough",
+      "rating": 8.27,
+      "genre": "Novel",
+      "id": "TheThornBirds",
+      "poster": "https://img4.labirint.ru/rc/ee3cb4451ec2a9fb4325ba28fb10bbe1/594x918q80/books19/181818/cover.jpg?1280394613",
+      "description": "The novel is written in the genre of a family saga, the events of which cover a half-century period. A young parish priest, Ralph de Bricassar, meets a family that owns a vast Australian ranch and becomes a spiritual father for its members. At the center of the novel is the long-term love story of Ralph and Maggie Cleary, the rancher's niece. The story of a difficult and tragic choice between feelings, vocation and church career."
+    },
+    {
+      "title": "The Crimson Petal and the White",
+      "author": "Michel Faber",
+      "genre": "Novel",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTU2MzUyMDIzOV5BMl5BanBnXkFtZTcwNTQyODAyOA@@._V1_.jpg",
+      "description": "<p>Crimson Petal and White is the unsentimental story of a nineteen-year-old prostitute named Candy, set in Victorian London. At the center of this 'melodrama without melodrama' is the young woman's desire not to be a commodity, to wrest her body and soul from the slums. We get up close and personal with the heir to a prosperous perfume business, William Rackham, and his innocent, fragile wife Agnes, his 'hidden' daughter Sophie, and pious brother Henry, tormented by the conflict between the worldly and the sinless. We will also meet erudite libertines, self-serving servants, homeless children, street girls, Salvation Society reformers. Michel Faber started Petal as a student and rewrote it three times over the course of twenty years. This voluminous, Dickensian scale novel is a lively, colorful, even whimsical story about people, prejudices, prohibitions, customs and customs of nineteenth century England. Other than that, it's just an incredibly entertaining read.&nbsp;</p>\n",
+      "rating": 8.33,
+      "id": "TheCrimsonPetalandtheWhite"
+    },
+    {
+      "title": "Martin Eden",
+      "author": "Jack London",
+      "rating": 8.74,
+      "genre": "Novel",
+      "id": "MartinEden",
+      "poster": "https://img3.labirint.ru/rc/327305858de3b8524f7c2ce876fcf8d5/220x340q80/books68/672797/cover.png?1575369206",
+      "description": "A young sailor named Martin Eden once saved an unfamiliar young man from death, who, in gratitude, invited him to a dinner party. Having found himself in a noble society for the first time, the uncouth and clumsy Martin meets the young man's sister, Ruth Morse, and she instantly wins his heart. Martin realizes that he - a simple guy - will never be together with a girl like Ruth. However, Martin Eden does not know how to give up and decides to quit his old life and become better, smarter and more educated in order to win the girl's heart."
+    },
+    {
+      "title": "White Fang",
+      "author": "Jack London",
+      "rating": 9.21,
+      "genre": "Adventure",
+      "id": "WhiteFang",
+      "poster": "https://m.media-amazon.com/images/I/514DvI57jiL.jpg",
+      "description": "He was born in Alaska and was originally a wild wolf. His fate changed many times - he was a sled dog, he was also a fighting dog. But one day he met his Man. The man saved his life. In due time, the wolf will repay him the same."
+    },
+    {
+      "title": "Les Trois Mousquetaires",
+      "author": "Alexandre Dumas",
+      "rating": 9.06,
+      "genre": "Adventure",
+      "id": "LesTroisMousquetaires",
+      "poster": "https://img4.labirint.ru/rc/6b0432dc043c6ffc5d755005d354c6cd/220x340q80/books50/491968/cover.png?1658755502",
+      "description": "The young Gascon d'Artagnan comes to Paris to become a musketeer. And on the very first day he runs into a duel with three experienced musketeers - Athos, Porthos and Aramis. A duel that will make them friends for life.In the courtyard of the XVII century, the country is ruled by the weak-willed Louis XIII and the almighty Cardinal Richelieu. And the four musketeers constantly find themselves in the path of countless intrigues of the cardinal. But there is nothing more dangerous than to interfere with Richelieu and especially his agent - the mysterious Milady, a seductress and poisoner with a dark past..."
+    },
+    {
+      "title": "American Gods",
+      "author": "Neil Gaiman",
+      "rating": 8.2,
+      "genre": "Fantasy",
+      "id": "AmericanGods",
+      "poster": "https://s1.livelib.ru/boocover/1000325896/200/334f/boocover.jpg",
+      "description": "People from various countries came to America, and they all brought their gods with them - the gods of evil and good, cunning and strong. Each of the gods has its own goals and desires. But all these gods needed and still need people, human faith. The world of gods and the world of people are intertwined more and more closely. Communication with the gods can destroy or help the heroes find themselves and gain unprecedented powers."
+    },
+    {
+      "title": "Neverwhere",
+      "author": "Neil Gaiman",
+      "rating": 8.11,
+      "genre": "Fantasy",
+      "id": "Neverwhere",
+      "poster": "https://img4.labirint.ru/rc/cb6c2fe17e11673fcbefdc2de7faa82a/363x561q80/books71/709338/cover.jpg?1567608851",
+      "description": "Beneath the streets of London there is a world that most people are unaware of. A world where the word becomes real power. A world that can only be accessed by opening the Door. A world full of dangers, inhabited by saints and monsters, murderers and angels. It is here that Richard Mayhew accidentally ends up and experiences unthinkable adventures here ..."
+    },
+    {
+      "title": "Sojourn",
+      "author": "Robert A. Salvatore",
+      "rating": 8.03,
+      "genre": "Fantasy",
+      "id": "Sojourn",
+      "poster": "https://fantlab.ru/images/editions/big/2129?r=1492543035",
+      "description": "The dark elf Drizzt Do'Urden hits the surface. Behind all the horrors of his native Menzoberranzan and years of wandering in the Underdark, now a completely different life awaits him. However, the surface will not become a calm haven for Drizzt, here a harsh reality awaits him, in no way inferior to the Underdark in anger, danger and harsh reality."
+    },
+    {
+      "title": "Exile",
+      "author": "Robert A. Salvatore",
+      "rating": 8.04,
+      "genre": "Fantasy",
+      "id": "Exile",
+      "poster": "https://img4.labirint.ru/rc/5e294404bf9aec357057e1dab2b3f28a/363x561q80/books20/194082/cover.jpg?1280394613",
+      "description": "Have you ever been so alone that you awakened as a ruthless killer? Do you have friends who are ready to give up everything for you? Will you ever have a person so dear that even if he tries to kill you, you will not raise a hand against him? Drizzt in the ruthless world of the Underdark will have to endure it all. And only faith, friendship and love for your loved one will help you not to go astray from your chosen path!"
+    },
+    {
+      "title": "Homeland",
+      "author": "Robert A. Salvatore",
+      "rating": 8.07,
+      "genre": "Fantasy",
+      "id": "Fantasy",
+      "poster": "https://avatars.mds.yandex.net/get-mpic/4544730/img_id5639297656470989846.jpeg/x332_trim",
+      "description": "Under the surface of the Forgotten Realms, under the thickness of many kilometers of insensible stone lies the Underdark. A country that no star illuminates with its light, and the Sun does not warm with its rays. The inhabitants here do not need light. And all that the eyes of a lost traveler can distinguish with the help of a torchlight is his death reflected in the reflection of metal or the smile of someone's fangs... The Underdark is the domain of darkness, silence and death...And one of these possessions are the centers of life - cities that are not inferior in their grandeur, beauty and size to their terrestrial 'brothers'. And behind one of the countless turns of the tunnel, the traveler may stumble upon such a city ...Welcome to our hearth of life! Welcome to Menzoberranzan, traveler! And don't look at me with those eyes, it's my dagger stuck between your ribs. You've been warned, all you'll find here is death. And the last thing you'll see is a beautiful drow smile! And now the time of darkness and silence has come... In the name of Lolth, the Spider Queen!"
+    },
+    {
+      "title": "Blindsight",
+      "author": "Peter Watts",
+      "rating": 7.94,
+      "genre": "Science-fiction",
+      "id": "Blindsight",
+      "poster": "https://fantlab.ru/images/editions/big/160373",
+      "description": "In 2082, it turned out that it is not alone in the universe. Countless probes shrouded the lands in a luminous web. To establish contact with an extraterrestrial civilization, the direction of 'Theseus', carrying on board a hastily assembled team of specialists. But, by definition, by purpose, the researcher will have to understand that the most unrealizable comprehension of the alien mind corresponds to a comparison with reality, and to a statement of the fate of the Earth and all of humanity."
+    },
+    {
+      "id": "f18332283569",
+      "author": "",
+      "description": "",
+      "poster": "",
+      "rating": 0,
+      "title": ""
+    },
+    {
+      "title": "Il nome della rosa",
+      "poster": "https://anylang.net/sites/default/files/covers/il-nome-della-rosa.jpg",
+      "author": "Umberto Eco",
+      "genre": "Novel",
+      "description": "<p><ins>T</ins><strong><ins>he main characters</ins></strong>, William of Baskerville and his young companion Adson of Melk, have to investigate the death of a certain Adelm, a monk of a Benedictine monastery. The action takes place at the end of November 1327 in an unnamed area, with a vague indication of the border of Liguria, Piedmont and France, that is, <em>to the north-west of Italy</em>. The story unfolds over the course of a week. Wilhelm, whose original purpose was to prepare a meeting between the theologians of Pope John XXII and Emperor Louis IV of Bavaria (Ludwig IV der Bayer), must now reassert his reputation as a learned man and once a famous inquisitor.</p>\n",
+      "rating": 0,
+      "id": "f183322b931a"
+    }
+  ],
+  "author": [
+    {
+      "nameAuthor": "Joe Hill",
+      "country": "USA",
+      "avatar": "https://static01.nyt.com/images/2019/10/27/books/review/27Yu/Yu1-superJumbo.jpg",
+      "DateOfBirth": "1972-06-04",
+      "id": "JoeHill",
+      "BooksWritten": [
+        "Horns",
+        "Heart-ShapedBox"
+      ]
+    },
+    {
+      "nameAuthor": "Howard Phillips Lovecraf",
+      "country": "USA",
+      "avatar": "https://fantlab.ru/images/autors/82?r=1492545834",
+      "DateOfBirth": "1890-08-20",
+      "id": "HowardPhillipsLovecraf",
+      "BooksWritten": [
+        "TheCallofCthulhu"
+      ]
+    },
+    {
+      "nameAuthor": "Agatha Christie",
+      "country": "Great Britain",
+      "avatar": "https://fantlab.ru/images/autors/7324?r=1586515592",
+      "DateOfBirth": "1890-09-15",
+      "id": "AgathaChristie",
+      "BooksWritten": [
+        "BlackCoffee"
+      ]
+    },
+    {
+      "nameAuthor": "Arthur Conan Doyle",
+      "country": "Great Britain",
+      "id": "ArthurConanDoyle",
+      "DateOfBirth": "1859-05-22",
+      "BooksWritten": [
+        "SherlockHolmes"
+      ],
+      "avatar": "https://fantlab.ru/images/autors/939?r=1492545819"
+    },
+    {
+      "nameAuthor": "Colleen McCullough",
+      "country": "Australia",
+      "id": "ColleenMcCullough",
+      "DateOfBirth": "1937-06-10",
+      "BooksWritten": [
+        "TheThornBirds"
+      ],
+      "avatar": "https://fantlab.ru/images/autors/10766?r=1492545826"
+    },
+    {
+      "nameAuthor": "Michel Faber",
+      "country": "Holland",
+      "id": "MichelFaber",
+      "DateOfBirth": "1960-04-13",
+      "BooksWritten": [
+        "TheCrimsonPetalandtheWhite"
+      ],
+      "avatar": "https://images.gr-assets.com/authors/1417041854p8/16272.jpg"
+    },
+    {
+      "nameAuthor": "Jack London",
+      "country": "USA",
+      "DateOfBirth": "1876-01-12",
+      "avatar": "https://fantlab.ru/images/autors/3003?r=1492545859",
+      "BooksWritten": [
+        "MartinEden"
+      ],
+      "id": "JackLondon"
+    },
+    {
+      "nameAuthor": "Alexandre Dumas",
+      "country": "USA",
+      "id": "AlexandreDumas",
+      "DateOfBirth": "1802-06-24",
+      "BooksWritten": [
+        "LesTroisMousquetaires"
+      ],
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Alexander_Dumas_p%C3%A8re_par_Nadar_-_Google_Art_Project.jpg/330px-Alexander_Dumas_p%C3%A8re_par_Nadar_-_Google_Art_Project.jpg"
+    },
+    {
+      "nameAuthor": "Neil Gaiman",
+      "country": "Great Britain",
+      "id": "NeilGaiman",
+      "DateOfBirth": "1960-11-10",
+      "BooksWritten": [
+        "AmericanGods",
+        "Neverwhere"
+      ],
+      "avatar": "https://fantlab.ru/images/autors/267?r=1492545968"
+    },
+    {
+      "nameAuthor": "Robert A. Salvatore",
+      "country": "USA",
+      "id": "RobertASalvatore",
+      "DateOfBirth": "1959-01-20",
+      "BooksWritten": [
+        "Exile",
+        "Homeland",
+        "Blindsight"
+      ],
+      "avatar": "https://fantlab.ru/images/autors/134?r=1492545839"
+    },
+    {
+      "nameAuthor": "Черный Борис",
+      "country": "Russia",
+      "DateOfBirth": "unknown",
+      "avatar": "",
+      "BooksWritten": [
+        "ПрофессиональныйTypeScript"
+      ],
+      "id": "ЧерныйБорис"
+    },
+    {
+      "nameAuthor": "Umberto Eco",
+      "country": "Italy",
+      "DateOfBirth": "1932-01-05",
+      "avatar": "https://fantlab.ru/images/autors/998?r=1492545944",
+      "BooksWritten": [
+        "f183322b931a"
+      ],
+      "id": "f18332292a40"
+    }
+  ],
+  "users": [
+    {
+      "user": {
+        "_id": "user2",
+        "login": "user2@gmail.com",
+        "password": "",
+        "isAdmin": true,
+        "avatar": "/images/whale.png",
+        "favoriteBooks": [
+          "LesTroisMousquetaires",
+          "Neverwhere",
+          "Horns",
+          "AmericanGods"
+        ]
+      },
+      "id": "user2",
+      "accessToken": "uw%844oWrnYTee",
+      "refreshToken": "P&SM%34@cTL!vV"
+    },
+    {
+      "accessToken": "7ZrCYAT1+vt9_h",
+      "refreshToken": "BPFLqRTu0n2gPA",
+      "id": "user5",
+      "user": {
+        "_id": "user5",
+        "login": "user5@gmail.com",
+        "password": "user5",
+        "isAdmin": false
+      }
+    }
+  ],
+  "sliders": [
+    {
+      "poster": "https://i.pinimg.com/originals/77/8c/99/778c99176ae1e075c9db0b5da6c9e8e5.jpg",
+      "title": "American Gods",
+      "subtitle": "Don't worry if you don't believe in us. We believed in you.",
+      "link": "AmericanGods"
+    },
+    {
+      "subtitle": "A thing that has a past is much more interesting than a new, faceless product that rolled off the assembly line without a single scratch",
+      "poster": "https://horrorzone.ru/uploads/_books/112704/mini/screenshot_36-750-300.png",
+      "title": " Heart-Shaped Box",
+      "link": "Heart-ShapedBox"
+    },
+    {
+      "poster": "https://ic.pics.livejournal.com/sandinist/14691098/3106648/3106648_original.jpg",
+      "subtitle": "Limited minds see limitation only in others.",
+      "title": "Martin Eden",
+      "link": "MartinEden"
+    }
+  ],
+  "trending": {
+    "description": "A list of great books that everyone should read. A selection of the most interesting and popular books.",
+    "PopularBooks": [
+      {
+        "title": "Профессиональный TypeScript",
+        "author": "Черный Борис",
+        "rating": 9.8,
+        "genre": "Non—fiction",
+        "id": "ПрофессиональныйTypeScript",
+        "poster": "https://habrastorage.org/webt/bb/4h/lv/bb4hlvk2mqdyleiihdwpuplll88.jpeg",
+        "description": "Any programmer working with a dynamically typed language will attest that the task of scaling code is incredibly difficult and requires a large team of engineers. That's why Facebook, Google and Microsoft came up with static typing for dynamically typed code.Working with any programming language, we trace exceptions and proofread code line by line, looking for a problem and a way to fix it. TypeScript allows you to automate this annoying part of the development process.TypeScript, unlike many other typed languages, is application-oriented. It introduces new concepts to express ideas more concisely and accurately, and to easily create scalable and secure modern applications.Boris Cherny helps to understand all the nuances and features of TypeScript, teaches how to fix errors and scale the code."
+      },
+      {
+        "title": "American Gods",
+        "author": "Neil Gaiman",
+        "rating": 8.2,
+        "genre": "Fantasy",
+        "id": "AmericanGods",
+        "poster": "https://s1.livelib.ru/boocover/1000325896/200/334f/boocover.jpg",
+        "description": "People from various countries came to America, and they all brought their gods with them - the gods of evil and good, cunning and strong. Each of the gods has its own goals and desires. But all these gods needed and still need people, human faith. The world of gods and the world of people are intertwined more and more closely. Communication with the gods can destroy or help the heroes find themselves and gain unprecedented powers."
+      },
+      {
+        "title": "Sherlock Holmes",
+        "author": "Arthur Conan Doyle",
+        "rating": 9.42,
+        "genre": "Detective",
+        "id": "SherlockHolmes",
+        "poster": "https://cdn1.ozone.ru/multimedia/1000279566.jpg",
+        "description": "This story is about one of the greatest detectives of our time, written by his friend and partner.A resident of an unsightly house on Baker Street solves the most difficult cases one by one, easily transforms into bandits, booksellers, chimney sweeps...Yes, several times Sherlock is on the brink of death. But how can death defeat the Great Investigator? Never! Especially if ahead - eternity. Eternal life in the hearts of millions and millions of readers who will never forget either the Reichenbach Falls, or the stupid Inspector Lestrade, or the faithful Watson, or the house on Baker Street ..."
+      },
+      {
+        "title": "Les Trois Mousquetaires",
+        "author": "Alexandre Dumas",
+        "rating": 9.06,
+        "genre": "Adventure",
+        "id": "LesTroisMousquetaires",
+        "poster": "https://img4.labirint.ru/rc/6b0432dc043c6ffc5d755005d354c6cd/220x340q80/books50/491968/cover.png?1658755502",
+        "description": "The young Gascon d'Artagnan comes to Paris to become a musketeer. And on the very first day he runs into a duel with three experienced musketeers - Athos, Porthos and Aramis. A duel that will make them friends for life.In the courtyard of the XVII century, the country is ruled by the weak-willed Louis XIII and the almighty Cardinal Richelieu. And the four musketeers constantly find themselves in the path of countless intrigues of the cardinal. But there is nothing more dangerous than to interfere with Richelieu and especially his agent - the mysterious Milady, a seductress and poisoner with a dark past..."
+      }
+    ]
+  }
+}
