@@ -1,0 +1,57 @@
+@import "../../../../../layout/layout.module.scss";
+.item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 5px 15px;
+  border: $secondary_color solid 2px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background-color: white;
+  .email {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    color: $secondary_color;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+  .isAdmin {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    color: $secondary_color;
+    padding-right: 100px;
+  }
+  .buttons {
+    display: flex;
+    margin-right: 5px;
+    width: 200px;
+    padding-left: 20px;
+    justify-content: center;
+    > button {
+      color: $secondary_color;
+      font-size: 20px;
+      padding: 0;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      width: 30px;
+      background: transparent;
+      margin-left: 10px;
+      &:hover {
+        color: red;
+        transition: 0.3s linear;
+      }
+    }
+  }
+}
+.item_admin {
+  background-color: $color_hover;
+}

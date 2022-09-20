@@ -1,0 +1,66 @@
+@import "../../layout/layout.module.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inspiration&family=Oleo+Script+Swash+Caps:wght@400;700&display=swap");
+.slide {
+  position: relative;
+  box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  overflow: hidden;
+  height: 300px;
+  border-radius: 15px;
+  .poster {
+    box-shadow: inset 260px 0px 50px 0px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    overflow: hidden;
+    height: 300px;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+    .image {
+      border-radius: 15px;
+      display: block;
+      z-index: -1;
+      transition: 1s ease-in-out;
+    }
+  }
+
+  .content {
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+    max-width: 300px;
+    display: block;
+
+    .title {
+      color: $color_hover;
+      font-size: 50px;
+      font-weight: 400;
+      font-family: "Inspiration", cursive;
+    }
+    .subtitle {
+      color: white;
+      font-size: 20px;
+      font-family: "Oleo Script Swash Caps", cursive;
+      &::before {
+        content: "«";
+      }
+      &::after {
+        content: "»";
+      }
+    }
+    .button {
+      width: 100px;
+      height: 30px;
+      margin-left: 50px;
+      margin-top: 10px;
+      background-color: $mail_color;
+      border-radius: 5px;
+      cursor: pointer;
+      border: $secondary_color solid 2px;
+      color: $secondary_color;
+      font-weight: 400;
+      font-family: "Oleo Script Swash Caps", cursive;
+      font-size: 18px;
+    }
+  }
+}

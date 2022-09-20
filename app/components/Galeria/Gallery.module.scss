@@ -1,0 +1,79 @@
+@import "../layout/layout.module.scss";
+
+.gallery {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.gallery_vertical {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: start;
+}
+.item {
+  box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 220px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  max-width: 500px;
+
+  .poster {
+    border-radius: 10px;
+    box-shadow: inset 0 -80px 50px -5px rgba(0, 0, 0, 0.8);
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+    .image {
+      border-radius: 10px;
+      z-index: -1;
+      transition: 1s ease-in-out;
+    }
+  }
+  .content {
+    position: absolute;
+    bottom: 40px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    max-height: 40px;
+    .title {
+      color: $color_hover;
+      font-size: 20px;
+      font-weight: 800;
+      font-family: "Oleo Script Swash Caps", cursive;
+      text-align: center;
+      max-width: 150px;
+      height: 50px;
+      vertical-align: bottom;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      color: $color_hover;
+      font-size: 14px;
+      font-weight: 300;
+      font-family: "Oleo Script Swash Caps", cursive;
+      text-align: center;
+      max-width: 150px;
+
+      vertical-align: bottom;
+    }
+  }
+}

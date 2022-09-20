@@ -1,0 +1,24 @@
+@import "../../../layout/layout.module.scss";
+.head_table {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  border: $secondary_color solid 2px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: $mail_color;
+  .item_head_table {
+    width: 200px;
+    font-size: 18px;
+    font-weight: 400;
+    color: $secondary_color;
+    font-family: "Roboto", sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+}

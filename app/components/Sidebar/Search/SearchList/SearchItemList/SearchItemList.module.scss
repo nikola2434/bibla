@@ -1,0 +1,42 @@
+@import "../../../../layout/layout.module.scss";
+
+.container_item {
+  width: 100%;
+  max-width: 170px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 70px;
+  overflow-x: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+
+    background-color: $secondary_color;
+    height: 1px;
+  }
+
+  &:hover {
+    background-color: $color_hover;
+    transition: 0.4s linear;
+  }
+  .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: $secondary_color;
+    max-width: 120px;
+  }
+  .image {
+    border-radius: 5px;
+    width: 50px;
+  }
+}

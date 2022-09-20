@@ -1,0 +1,57 @@
+@import "../../../../layout/layout.module.scss";
+.container_items {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  opacity: 0;
+  transition: 0.4s;
+  animation: show 0.5s 1;
+  animation-fill-mode: forwards;
+  background-color: white;
+  margin-bottom: 70px;
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.error {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border: $secondary_color solid 2px;
+  border-radius: 10px;
+  height: 80px;
+  background-color: white;
+
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  color: $secondary_color;
+  opacity: 0;
+  transition: 0.4s;
+  animation: show 0.5s 1;
+  animation-fill-mode: forwards;
+  background-color: white;
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+.buttons {
+  display: flex;
+  width: 260px;
+  position: absolute;
+  bottom: 90px;
+}
