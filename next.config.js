@@ -4,6 +4,8 @@ const nextConfig = {
   swcMinify: true,
   experimental: { esmExternals: true },
   images: {
+    loader: "akamai",
+    path: "",
     domains: [
       "knijky.ru",
       "static.insales-cdn.com",
