@@ -27,7 +27,11 @@ export const AdminGenreContainer: FC = () => {
   function getData(data: IMenuItems[]) {
     const arrayMenuItems: string[][] = [];
     data.forEach((item) =>
-      arrayMenuItems.push([item.title, String(item.books?.length), item.id])
+      arrayMenuItems.push([
+        item.title,
+        String(item.books?.length),
+        String(item.id),
+      ])
     );
     return arrayMenuItems;
   }

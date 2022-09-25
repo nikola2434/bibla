@@ -35,7 +35,7 @@ export const useSearchAdminBooks = () => {
       id: getRandomID(),
       author: "",
       description: "",
-      genre: undefined,
+      genre: "Novel",
       poster: "",
       rating: 0,
       title: "",

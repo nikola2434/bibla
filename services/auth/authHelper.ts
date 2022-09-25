@@ -25,6 +25,7 @@ export const getNewUser = (email: string, password: string): IAuthResponse => {
       login: email,
       password: password,
       isAdmin: false,
+      favoriteBooks: [],
     },
     id: getRandomID(),
     accessToken: getCookies(),

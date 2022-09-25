@@ -5,7 +5,7 @@ export type TypeGenre =
   | "Thriller"
   | "Fantasy"
   | "Science-fiction"
-  | "Non—fiction";
+  | "Non—fiction" ;
 
 export interface IData {
   day: string | null;
