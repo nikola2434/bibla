@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
         books,
         authors,
       } as IHomeProps,
+      revalidate: 10,
     };
   } catch (error) {
     return {

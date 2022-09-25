@@ -43,5 +43,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         } as IItemGalleryProps;
       }),
     } as IAuthorProps,
+    revalidate: 10,
   };
 };

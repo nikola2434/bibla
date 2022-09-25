@@ -33,6 +33,7 @@ export const getStaticProps: GetStaticProps = async () => {
             } as IItemGalleryProps)
         ),
       } as ICatallogProps,
+      revalidate: 10,
     };
   } catch (error) {
     return {

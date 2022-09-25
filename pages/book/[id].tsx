@@ -49,5 +49,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           } as IItemGalleryProps;
         }),
     } as IBookProps,
+    revalidate: 10,
   };
 };
