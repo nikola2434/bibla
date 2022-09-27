@@ -5,7 +5,8 @@
   "homepage": "https://nikola2434.githab.io/bibla",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "server": "json-server -w server/db.json -p 3001",
