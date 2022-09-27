@@ -24,10 +24,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
-      - run: yarn export
+        
+      - name: Install and Build
+        run: yarn && yarn build && yarn export
       - run: touch ./out/.nojekyll
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
