@@ -4,8 +4,7 @@ const nextConfig = {
   optimizeFonts: false,
   swcMinify: true,
   experimental: { esmExternals: true },
-  basePath: "/nextjs-pages",
-  assetPrefix: "/nextjs-pages",
+  assetPrefix: ".",
   images: {
     loader: "akamai",
     path: "",
