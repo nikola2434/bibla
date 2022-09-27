@@ -28,6 +28,10 @@ const nextConfig = {
       "static01.nyt.com",
       "upload.wikimedia.org",
       "anylang.net",
+      "images-na.ssl-images-amazon.com",
+      "img-gorod.ru",
+      "m.media-amazon.com",
+      "pictures.abebooks.com",
     ],
   },
 };
