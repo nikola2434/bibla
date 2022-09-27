@@ -4,7 +4,8 @@ const nextConfig = {
   optimizeFonts: false,
   swcMinify: true,
   experimental: { esmExternals: true },
-  assetPrefix: ".",
+  basePath: "/",
+  assetPrefix: "/",
   images: {
     loader: "akamai",
     path: "",
