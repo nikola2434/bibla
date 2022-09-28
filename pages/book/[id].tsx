@@ -32,23 +32,30 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const book = await axiocBookApi.getBook(String(params?.id));
-  const genre = await axiosGenreApi.getGenre(generateLink(book.genre));
-  const similarBooks = await axiocBookApi.getBooksId(genre?.books || []);
-  return {
-    props: {
-      book: book,
-      similarBooks: similarBooks
-        .filter((item) => item.id !== String(params?.id))
-        .map((book) => {
-          return {
-            link: book.id,
-            poster: book.poster,
-            title: book.title,
-            subtitle: book.author,
-          } as IItemGalleryProps;
-        }),
-    } as IBookProps,
-    revalidate: 10,
-  };
+  try {
+    const book = await axiocBookApi.getBook(String(params?.id));
+    const genre = await axiosGenreApi.getGenre(generateLink(book.genre));
+    const similarBooks = await axiocBookApi.getBooksId(genre?.books || []);
+    return {
+      props: {
+        book: book,
+        similarBooks: similarBooks
+          .filter((item) => item.id !== String(params?.id))
+          .map((book) => {
+            return {
+              link: book.id,
+              poster: book.poster,
+              title: book.title,
+              subtitle: book.author,
+            } as IItemGalleryProps;
+          }),
+      } as IBookProps,
+      revalidate: 10,
+    };
+  } catch (error) {
+    return {
+      props: { link: "", poster: "", title: "" } as IItemGalleryProps,
+      revalidate: 10,
+    };
+  }
 };

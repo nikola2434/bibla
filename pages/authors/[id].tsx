@@ -29,20 +29,37 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const author = await axiosAuthorApi.getAuthor(String(params?.id));
-  const books = await axiocBookApi.getBooksId(author.BooksWritten);
-  return {
-    props: {
-      author: author,
-      booksWritten: books.map((book) => {
-        return {
-          link: book.id,
-          poster: book.poster,
-          title: book.title,
-          subtitle: book.author,
-        } as IItemGalleryProps;
-      }),
-    } as IAuthorProps,
-    revalidate: 10,
-  };
+  try {
+    const author = await axiosAuthorApi.getAuthor(String(params?.id));
+    const books = await axiocBookApi.getBooksId(author.BooksWritten);
+    return {
+      props: {
+        author: author,
+        booksWritten: books.map((book) => {
+          return {
+            link: book.id,
+            poster: book.poster,
+            title: book.title,
+            subtitle: book.author,
+          } as IItemGalleryProps;
+        }),
+      } as IAuthorProps,
+      revalidate: 10,
+    };
+  } catch (error) {
+    return {
+      props: {
+        author: {
+          avatar: "",
+          BooksWritten: [],
+          country: "",
+          DateOfBirth: "",
+          id: "",
+          nameAuthor: "",
+        },
+        booksWritten: [],
+      } as IAuthorProps,
+      revalidate: 10,
+    };
+  }
 };
