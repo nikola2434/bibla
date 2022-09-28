@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
         
       - name: Install and Build
-        run: yarn && yarn server && yarn build && yarn export
+        run: yarn && yarn build && yarn export
       - run: touch ./out/.nojekyll
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
