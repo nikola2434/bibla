@@ -4,8 +4,6 @@ const nextConfig = {
   optimizeFonts: false,
   swcMinify: true,
   experimental: { esmExternals: true },
-  basePath: "/bibla",
-  assetPrefix:"/bibla",
   images: {
     loader: "akamai",
     path: "",
