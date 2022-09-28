@@ -4,7 +4,10 @@
       "title": "Detective",
       "icons": "MdSearch",
       "link": "detective",
-      "books": ["BlackCoffee", "SherlockHolmes"],
+      "books": [
+        "BlackCoffee",
+        "SherlockHolmes"
+      ],
       "description": "The most complex mysteries and haunting secrets, colorful characters and unexpected plot twists: a good detective story will never make you bored.",
       "id": "Detective"
     },
@@ -25,7 +28,10 @@
       "title": "Adventure",
       "icons": "MdOutlineHiking",
       "link": "adventure",
-      "books": ["WhiteFang", "LesTroisMousquetaires"],
+      "books": [
+        "WhiteFang",
+        "LesTroisMousquetaires"
+      ],
       "id": "Adventure",
       "description": "Let's travel right now!"
     },
@@ -34,7 +40,11 @@
       "link": "thriller",
       "icons": "MdOutlineMoodBad",
       "id": "Thriller",
-      "books": ["Horns", "Heart-ShapedBox", "TheCallofCthulhu "],
+      "books": [
+        "Horns",
+        "Heart-ShapedBox",
+        "TheCallofCthulhu "
+      ],
       "description": "Fans of action fiction are not so easy to surprise or scare, because it is quite difficult to make a person experience a feeling of true fear only after reading the work, but these books can do it."
     },
     {
@@ -42,7 +52,13 @@
       "link": "fantasy",
       "icons": "MdOutlineAutoFixHigh",
       "id": "Fantasy",
-      "books": ["AmericanGods", "Neverwhere", "Sojourn", "Exile", "Homeland"],
+      "books": [
+        "AmericanGods",
+        "Neverwhere",
+        "Sojourn",
+        "Exile",
+        "Homeland"
+      ],
       "description": "Do you love fantasy?:)"
     },
     {
@@ -50,14 +66,18 @@
       "link": "science-fiction",
       "icons": "MdOutlinePsychology",
       "id": "Science-fiction",
-      "books": ["Blindsight"],
+      "books": [
+        "Blindsight"
+      ],
       "description": "Captivating tales of space adventure, or terrifying fantasies of a robotic future, or an introspective look at what it really means to be human."
     },
     {
       "title": "Non—fiction",
       "icons": "MdOutlinePrecisionManufacturing",
       "link": "Non-Fiction",
-      "books": ["f1835a5fba6a"],
+      "books": [
+        "f1835a5fba6a"
+      ],
       "description": "Self-development is a difficult path that cannot be passed to the end, but it is only necessary to interrupt the movement for a short time, as you are thrown back.",
       "id": "Non—fiction"
     }
@@ -65,12 +85,12 @@
   "books": [
     {
       "title": "Horns",
-      "author": "Joe Hill",
-      "rating": 7.87,
-      "genre": "Thriller",
-      "id": "Horns",
       "poster": "https://s1.livelib.ru/boocover/1002894334/200/a078/boocover.jpg",
-      "description": "Ig Perrish has been under the pressure of public opinion for a whole year and desperately feels that he is not guilty of the death of his girlfriend - Merrin. In the end, on the anniversary of the death of his girlfriend, he, completely desperate, has a series of blasphemous actions, which is why his horns begin to grow, and he is endowed with the gift of expressing people, telling him the most vile desires and already committed deeds. After that, he gets to the bottom of the truth: who killed his girlfriend ..."
+      "author": "Joe Hill",
+      "genre": "Thriller",
+      "description": "Ig Perrish has been under the pressure of public opinion for a whole year and desperately feels that he is not guilty of the death of his girlfriend - Merrin. In the end, on the anniversary of the death of his girlfriend, he, completely desperate, has a series of blasphemous actions, which is why his horns begin to grow, and he is endowed with the gift of expressing people, telling him the most vile desires and already committed deeds. After that, he gets to the bottom of the truth: who killed his girlfriend ...",
+      "rating": 7.87,
+      "id": "Horns"
     },
     {
       "title": " Heart-Shaped Box",
@@ -233,7 +253,10 @@
       "avatar": "https://static01.nyt.com/images/2019/10/27/books/review/27Yu/Yu1-superJumbo.jpg",
       "DateOfBirth": "1972-06-04",
       "id": "JoeHill",
-      "BooksWritten": ["Horns", "Heart-ShapedBox"]
+      "BooksWritten": [
+        "Horns",
+        "Heart-ShapedBox"
+      ]
     },
     {
       "nameAuthor": "Howard Phillips Lovecraf",
@@ -241,7 +264,9 @@
       "avatar": "https://fantlab.ru/images/autors/82?r=1492545834",
       "DateOfBirth": "1890-08-20",
       "id": "HowardPhillipsLovecraf",
-      "BooksWritten": ["TheCallofCthulhu"]
+      "BooksWritten": [
+        "TheCallofCthulhu"
+      ]
     },
     {
       "nameAuthor": "Agatha Christie",
@@ -249,14 +274,18 @@
       "avatar": "https://fantlab.ru/images/autors/7324?r=1586515592",
       "DateOfBirth": "1890-09-15",
       "id": "AgathaChristie",
-      "BooksWritten": ["BlackCoffee"]
+      "BooksWritten": [
+        "BlackCoffee"
+      ]
     },
     {
       "nameAuthor": "Arthur Conan Doyle",
       "country": "Great Britain",
       "id": "ArthurConanDoyle",
       "DateOfBirth": "1859-05-22",
-      "BooksWritten": ["SherlockHolmes"],
+      "BooksWritten": [
+        "SherlockHolmes"
+      ],
       "avatar": "https://fantlab.ru/images/autors/939?r=1492545819"
     },
     {
@@ -264,7 +293,9 @@
       "country": "Australia",
       "id": "ColleenMcCullough",
       "DateOfBirth": "1937-06-10",
-      "BooksWritten": ["TheThornBirds"],
+      "BooksWritten": [
+        "TheThornBirds"
+      ],
       "avatar": "https://fantlab.ru/images/autors/10766?r=1492545826"
     },
     {
@@ -272,7 +303,9 @@
       "country": "Holland",
       "id": "MichelFaber",
       "DateOfBirth": "1960-04-13",
-      "BooksWritten": ["TheCrimsonPetalandtheWhite"],
+      "BooksWritten": [
+        "TheCrimsonPetalandtheWhite"
+      ],
       "avatar": "https://images.gr-assets.com/authors/1417041854p8/16272.jpg"
     },
     {
@@ -280,7 +313,9 @@
       "country": "USA",
       "DateOfBirth": "1876-01-12",
       "avatar": "https://fantlab.ru/images/autors/3003?r=1492545859",
-      "BooksWritten": ["MartinEden"],
+      "BooksWritten": [
+        "MartinEden"
+      ],
       "id": "JackLondon"
     },
     {
@@ -288,7 +323,9 @@
       "country": "USA",
       "id": "AlexandreDumas",
       "DateOfBirth": "1802-06-24",
-      "BooksWritten": ["LesTroisMousquetaires"],
+      "BooksWritten": [
+        "LesTroisMousquetaires"
+      ],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Alexander_Dumas_p%C3%A8re_par_Nadar_-_Google_Art_Project.jpg/330px-Alexander_Dumas_p%C3%A8re_par_Nadar_-_Google_Art_Project.jpg"
     },
     {
@@ -296,7 +333,10 @@
       "country": "Great Britain",
       "id": "NeilGaiman",
       "DateOfBirth": "1960-11-10",
-      "BooksWritten": ["AmericanGods", "Neverwhere"],
+      "BooksWritten": [
+        "AmericanGods",
+        "Neverwhere"
+      ],
       "avatar": "https://fantlab.ru/images/autors/267?r=1492545968"
     },
     {
@@ -304,7 +344,11 @@
       "country": "USA",
       "id": "RobertASalvatore",
       "DateOfBirth": "1959-01-20",
-      "BooksWritten": ["Exile", "Homeland", "Blindsight"],
+      "BooksWritten": [
+        "Exile",
+        "Homeland",
+        "Blindsight"
+      ],
       "avatar": "https://fantlab.ru/images/autors/134?r=1492545839"
     },
     {
@@ -312,7 +356,9 @@
       "country": "Russia",
       "DateOfBirth": "unknown",
       "avatar": "",
-      "BooksWritten": ["ProfessionalTypeScript"],
+      "BooksWritten": [
+        "ProfessionalTypeScript"
+      ],
       "id": "BorisCherny"
     },
     {
@@ -320,7 +366,9 @@
       "country": "Italy",
       "DateOfBirth": "1932-01-05",
       "avatar": "https://fantlab.ru/images/autors/998?r=1492545944",
-      "BooksWritten": ["f183322b931a"],
+      "BooksWritten": [
+        "f183322b931a"
+      ],
       "id": "f18332292a40"
     }
   ],
