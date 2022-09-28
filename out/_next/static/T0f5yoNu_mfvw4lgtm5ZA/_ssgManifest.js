@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002F","\u002Fauthors\u002F[id]","\u002Fbook\u002F[id]","\u002Fgenre\u002F[slug]","\u002Ftrending"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
