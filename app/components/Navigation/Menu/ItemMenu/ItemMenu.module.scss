@@ -3,7 +3,7 @@
   margin-left: 10px;
   font-size: 18px;
   color: $mail_color;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   transition: 0.3s linear;
   cursor: pointer;
@@ -16,11 +16,18 @@
       width: 100%;
     }
   }
-  &:hover{
+  &:hover {
     color: $secondary_color;
   }
 }
-.active{
-    color: $secondary_color;
-    border-right: 3px solid $secondary_color;
+.active {
+  color: $secondary_color;
+  border-right: 3px solid $secondary_color;
 }
+
+@media (max-width: $width_notebook) {
+  .default {
+    font-size: 16px;
+  }
+}
+

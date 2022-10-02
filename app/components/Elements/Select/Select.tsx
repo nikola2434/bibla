@@ -3,9 +3,7 @@ import style from "./Select.module.scss";
 import { IOption, ISelect } from "./select_interface";
 import { OnChangeValue } from "react-select";
 import ReactSelect from "react-select";
-import makeAnimated from "react-select/animated";
 
-const animatedComponents = makeAnimated();
 
 const Select: FC<ISelect> = ({
   errors,

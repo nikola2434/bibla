@@ -10,8 +10,8 @@
   border-radius: 10px;
   margin-bottom: 5px;
   background-color: white;
+  font-size: 16px;
   .email {
-    font-size: 16px;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
     color: $secondary_color;
@@ -22,7 +22,6 @@
     text-align: center;
   }
   .isAdmin {
-    font-size: 16px;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
     color: $secondary_color;
@@ -54,4 +53,15 @@
 }
 .item_admin {
   background-color: $color_hover;
+}
+
+@media (max-width: $width_tablet) {
+  .item {
+    font-size: 12px;
+  }
+}
+@media (max-width: $width_telephone) {
+  .item {
+    font-size: 10px;
+  }
 }

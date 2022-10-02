@@ -6,10 +6,12 @@ import { Icons } from "../../../../UI/Icons";
 import { useRouter } from "next/router";
 import cn from "classnames";
 
-export const ItemMenu: FC<{ item: IMenuItems }> = ({ item }) => {
+export const ItemMenu: FC<{
+  item: IMenuItems;
+  onClick: () => void;
+}> = ({ item, onClick }) => {
   const route = useRouter();
   return (
-
     <div
       className={cn(
         { [style.active]: route.asPath === item.link },
@@ -17,7 +19,7 @@ export const ItemMenu: FC<{ item: IMenuItems }> = ({ item }) => {
       )}
     >
       <Link href={item.link}>
-        <a className={style.item_menu}>
+        <a className={style.item_menu} onClick={() => onClick()}>
           <Icons name={item.icons} />
           <div className={style.title}>{item.title}</div>
         </a>

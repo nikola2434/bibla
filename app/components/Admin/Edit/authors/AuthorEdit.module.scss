@@ -7,22 +7,21 @@
   padding-left: 30px;
   justify-content: space-between;
   .field {
-    width: 32%;
+    width: 33%;
+    min-width: 270px;
+    margin-bottom: 20px;
   }
 }
 .update {
-  position: absolute;
-  bottom: 40%;
-  margin: 0px 15px;
+  margin-top: 80px;
+  margin-left: 15px;
   max-width: 150px;
 }
 .select {
-  display: flex;
-
   margin: 10px 25px;
   align-items: flex-start;
   height: 150px;
-  justify-content: center;
+
   .react_select {
     width: 40%;
     margin-right: 5%;

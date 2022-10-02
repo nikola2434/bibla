@@ -14,10 +14,13 @@
 
   .image {
     border-radius: 5px;
+    width: 40%;
+    min-height: 90px;
   }
   .container_characteristics {
     margin-left: 5px;
     display: block;
+    width: 60%;
 
     .title {
       text-overflow: ellipsis;
@@ -26,7 +29,7 @@
       color: $secondary_color;
       font-family: "Roboto", sans-serif;
       font-size: 18px;
-      width: 100px;
+      min-width: 20px;
     }
     .genre {
       font-size: 14px;

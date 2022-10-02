@@ -5,13 +5,11 @@
   box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
   display: inline-block;
   overflow: hidden;
-  height: 300px;
   border-radius: 15px;
+  box-sizing: border-box;
   .poster {
     box-shadow: inset 260px 0px 50px 0px rgba(0, 0, 0, 0.5);
     display: inline-block;
-    overflow: hidden;
-    height: 300px;
 
     &:hover img {
       transform: scale(1.1);
@@ -21,6 +19,7 @@
       display: block;
       z-index: -1;
       transition: 1s ease-in-out;
+      box-sizing: border-box;
     }
   }
 
@@ -30,6 +29,8 @@
     bottom: 30px;
     max-width: 300px;
     display: block;
+
+
 
     .title {
       color: $color_hover;
@@ -41,6 +42,7 @@
       color: white;
       font-size: 20px;
       font-family: "Oleo Script Swash Caps", cursive;
+
       &::before {
         content: "«";
       }
@@ -49,10 +51,7 @@
       }
     }
     .button {
-      width: 100px;
-      height: 30px;
-      margin-left: 50px;
-      margin-top: 10px;
+      margin-left: 10%;
       background-color: $mail_color;
       border-radius: 5px;
       cursor: pointer;
@@ -61,6 +60,29 @@
       font-weight: 400;
       font-family: "Oleo Script Swash Caps", cursive;
       font-size: 18px;
+      padding: 3px 15px;
     }
+  }
+}
+
+@media (max-width: $width_tablet) {
+  .slide {
+    .content {
+      .title {
+        font-size: 30px;
+      }
+      .subtitle {
+        font-size: 14px;
+      }
+      .button {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: $width_telephone) {
+  .slide {
+    display: none;
   }
 }

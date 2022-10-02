@@ -25,11 +25,6 @@
     align-items: center;
     justify-content: center;
 
-    // &:hover {
-    //   background-color: $color_hover;
-    //   transition: 0.2s linear;
-    //   color: $mail_color;
-    // }
     &::after {
       display: block;
       content: "";
@@ -61,6 +56,22 @@
       border-radius: 2px;
       z-index: 2;
       opacity: 1;
+    }
+  }
+}
+
+@media (max-width: $width_tablet) {
+  .navigation {
+    .default {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: $width_telephone) {
+  .navigation {
+    .default {
+      font-size: 12px;
     }
   }
 }

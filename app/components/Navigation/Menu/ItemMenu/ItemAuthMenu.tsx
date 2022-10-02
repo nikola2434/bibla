@@ -5,11 +5,14 @@ import Link from "next/link";
 import style from "./ItemMenu.module.scss";
 import { Icons } from "../../../../UI/Icons";
 
-const ItemAuthMenu: FC<{ item: IMenuItems }> = ({ item }) => {
+const ItemAuthMenu: FC<{
+  item: IMenuItems;
+  setIsOpen: () => void;
+}> = ({ item, setIsOpen }) => {
   return (
     <div className={style.default}>
       <Link href={item.link}>
-        <a className={style.item_menu}>
+        <a className={style.item_menu} onClick={() => setIsOpen()}>
           <Icons name={item.icons} />
           <div className={style.title}>{item.title}</div>
         </a>

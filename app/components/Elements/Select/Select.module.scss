@@ -8,7 +8,19 @@
     font-weight: 400;
     margin-bottom: 10px;
   }
-  .react_select {
-    
+}
+
+@media (max-width: $width_tablet) {
+  .select {
+    .placeholder {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: $width_telephone) {
+  .select {
+    .placeholder {
+      font-size: 16px;
+    }
   }
 }

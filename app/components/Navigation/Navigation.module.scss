@@ -1,8 +1,12 @@
 @import "../layout/layout.module.scss";
 .navigation {
   width: 20%;
-  border-right: 2px solid $mail_color;
   max-width: 350px;
+  background-color: white;
+  border-right: 2px solid $mail_color;
+  position: relative;
+  transition: all 0.3s linear;
+  z-index: 20;
   background-color: white;
   .container_menu {
     display: block;
@@ -10,8 +14,47 @@
       margin-bottom: 30px;
     }
     > div:last-child {
+      margin-top: 120%;
+    }
+  }
+  .container_arrow {
+    display: none;
+    .arrow {
       position: absolute;
-      bottom: 30px;
+      left: 94%;
+      top: 50%;
+      font-size: 20px;
+      border-radius: 50%;
+      background-color: white;
+      box-sizing: border-box;
+      border: $mail_color 2px solid;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      color: $secondary_color;
+      cursor: pointer;
+      transition: all 0.3s linear;
+    }
+  }
+
+  .active_arrow {
+    transform: rotate(-180deg);
+  }
+}
+.active_navigation {
+  transform: translate(-93%);
+}
+
+@media (max-width: $width_tablet) {
+  .navigation {
+    position: fixed;
+    width: 180px;
+    height: 100%;
+    .container_arrow {
+      display: block;
     }
   }
 }

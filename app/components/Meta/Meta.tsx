@@ -18,6 +18,7 @@ const Meta: FC<IMetaProps> = ({ title, UrlImage, children }) => {
         <title itemProp="headline">{getCurrentTitle(title)}</title>
         <meta property="og:locale" content="en" />
         <meta property="og:image" content={UrlImage} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       {children}
     </>

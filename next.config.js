@@ -5,8 +5,6 @@ const nextConfig = {
   swcMinify: true,
   experimental: { esmExternals: true },
   env: { APP_SERVER_URL: "" },
-  basePath: "/bibla",
-  assetPrefix: "/bibla",
   images: {
     loader: "akamai",
     path: "",

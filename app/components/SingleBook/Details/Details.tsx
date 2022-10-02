@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FC, useEffect, useState } from "react";
+import { FC} from "react";
 
 import { getAuthorUrl, getGenreUrl } from "../../../../config/url.config";
 import { useAppSelector } from "../../../../hooks/useAppSelector";
@@ -19,13 +19,6 @@ const Details: FC<{ book: IBook }> = ({ book }) => {
     const author = await axiosAuthorApi.getAuthorByTitle(title);
     push(getAuthorUrl(author.id));
   };
-
-  //   const [favoriteBook, setFavoriteBook] = useState(false);
-  //   useEffect(
-  //     () =>
-  //       setFavoriteBook(Boolean(user?.favoriteBooks.includes(String(query.id)))),
-  //     [book]
-  //   );
   return (
     <div className={style.details}>
       <div className={style.image}>

@@ -6,12 +6,8 @@ import style from "./AuthorEdit.module.scss";
 import { SkeletonLoading } from "../../../Skeleton/Skeleton";
 import Field from "../../../Elements/Field/Field";
 import Button from "../../../Elements/Button/Button";
-import cn from "classnames";
-import Image from "next/image";
-import {
-  useGetAllBooksQuery,
-  useGetPopularBooksQuery,
-} from "../../../../../services/booksApi";
+
+import { useGetAllBooksQuery } from "../../../../../services/booksApi";
 import { IOption, ISelect } from "../../../Elements/Select/select_interface";
 import dynamic from "next/dynamic";
 
@@ -81,9 +77,8 @@ const AuthorEditContainer: FC = () => {
                   })}
                 />
               </div>
-            </div>
-            <div className={style.select}>
-              <div className={style.react_select}>
+
+              <div className={style.field}>
                 <Controller
                   control={control}
                   name="BooksWritten"
@@ -99,7 +94,7 @@ const AuthorEditContainer: FC = () => {
                   )}
                 />
               </div>
-              <div className={cn(style.field, style.image)}>
+              <div className={style.field}>
                 <Field
                   type={"text"}
                   errors={errors.avatar}

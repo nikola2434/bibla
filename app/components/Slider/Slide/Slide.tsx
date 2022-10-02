@@ -15,8 +15,8 @@ const Slide: FC<{ slide: ISlide }> = ({ slide }) => {
           alt={slide.title}
           draggable={false}
           objectFit="cover"
-          width={990}
-          height={330}
+          width={980}
+          height={300}
           priority
           className={style.image}
         />

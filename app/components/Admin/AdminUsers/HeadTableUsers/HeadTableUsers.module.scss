@@ -22,3 +22,17 @@
     text-align: center;
   }
 }
+@media (max-width: $width_tablet) {
+  .head_table {
+    .item_head_table {
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width: $width_tablet) {
+  .head_table {
+    .item_head_table {
+      font-size: 12px;
+    }
+  }
+}

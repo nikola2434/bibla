@@ -8,9 +8,11 @@
     margin: 10px 20px;
     .search {
       width: 25%;
+      min-width: 200px;
     }
     .add_new {
       width: 15%;
+      min-width: 70px;
     }
   }
   .table {

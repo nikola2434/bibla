@@ -20,6 +20,7 @@ const ItemPopularBook: FC<{ book: IBook }> = ({ book }) => {
             draggable={false}
             priority
             className={style.image}
+            objectFit="cover"
           />
           <div className={style.container_characteristics}>
             <div className={style.title}>{book.title}</div>

@@ -1,6 +1,5 @@
 @import "../../layout/layout.module.scss";
 .container {
-
   margin-left: 20px;
   margin-top: 10px;
   .title_Menu {
@@ -15,3 +14,12 @@
     width: 100%;
   }
 }
+
+@media (max-width: $width_notebook) {
+  .container {
+    .title_Menu {
+      font-size: 20px;
+    }
+  }
+}
+

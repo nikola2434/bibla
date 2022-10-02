@@ -20,7 +20,7 @@
     bottom: 0;
   }
   .container_auth {
-    width: 45%;
+    width: 450px;
     border: $secondary_color solid 2px;
     height: 50%;
     border-radius: 15px;
@@ -28,6 +28,7 @@
     padding: 10px;
     display: block;
     background-color: white;
+    height: 370px;
 
     .container_heading {
       display: flex;

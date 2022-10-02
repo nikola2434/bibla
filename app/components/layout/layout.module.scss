@@ -2,14 +2,18 @@ $mail_color: #43acf9;
 $secondary_color: #0957b4;
 $color_gold: #ffd700;
 $color_hover: #deedf8;
+$width_notebook: 1280px;
+$width_tablet: 900px;
+$width_telephone: 480px;
+
 .layout {
   display: flex;
   max-width: 100%;
-  height: 100vh;
+  height: 100%;
   justify-content: space-between;
   .center {
     width: 100%;
-    max-width: 70%;
+    min-width: 70%;
     margin: 0 15;
   }
 }

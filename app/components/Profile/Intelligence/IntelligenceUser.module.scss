@@ -12,6 +12,7 @@
     padding: 10px;
     display: block;
     position: relative;
+    max-width: 200px;
     > button {
       outline: none;
       border: 0;
@@ -86,6 +87,24 @@
     }
   }
 }
+
+@media (max-width: $width_tablet) {
+  .intelligence {
+    .intelligence_container {
+      .login_container {
+        .login {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: $width_telephone) {
+  .intelligence {
+    display: block;
+  }
+}
+
 @keyframes show {
   0% {
     opacity: 0;

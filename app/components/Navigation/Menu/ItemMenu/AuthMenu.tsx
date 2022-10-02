@@ -5,7 +5,9 @@ import ItemAuthMenu from "./ItemAuthMenu";
 import LogoutButton from "./LogoutButton";
 import style from "../Menu.module.scss";
 
-const AuthMenu: FC = () => {
+const AuthMenu: FC<{ setIsOpen: () => void }> = ({
+  setIsOpen,
+}) => {
   const { user } = useAppSelector((state) => state.users);
 
   return (
@@ -15,6 +17,7 @@ const AuthMenu: FC = () => {
         {user ? (
           <div>
             <ItemAuthMenu
+              setIsOpen={setIsOpen}
               item={{
                 icons: "MdSettings",
                 title: "Profile",
@@ -28,11 +31,13 @@ const AuthMenu: FC = () => {
           </div>
         ) : (
           <ItemAuthMenu
+            setIsOpen={setIsOpen}
             item={{ icons: "MdLogin", link: "/auth", title: "Login" }}
           />
         )}
         {user?.isAdmin && (
           <ItemAuthMenu
+            setIsOpen={setIsOpen}
             item={{
               icons: "MdLock",
               title: "Admin panel",

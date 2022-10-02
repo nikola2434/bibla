@@ -23,3 +23,11 @@
     box-sizing: border-box;
   }
 }
+
+@media (max-width: $width_tablet) {
+  .search {
+    input {
+      font-size: 12px;
+    }
+  }
+}
