@@ -33,7 +33,7 @@ export const Navigation: FC = () => {
   }, [isMobile]);
   const [isOpen, setIsOpen] = useState(!isMobile);
   const changeOpen = () => {
-    if (!isMobile) setIsOpen(true);
+    if (isMobile) setIsOpen(true);
   };
 
   return (
