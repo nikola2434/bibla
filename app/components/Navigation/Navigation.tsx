@@ -27,13 +27,13 @@ export const Navigation: FC = () => {
       }),
     }
   );
-  const { isTablet, isDesktop } = useMatchMedia();
+  const { isTablet, isMobile, isDesktop } = useMatchMedia();
   useEffect(() => {
-    if (!isDesktop) setIsOpen(false);
-  }, [isTablet]);
-  const [isOpen, setIsOpen] = useState(!isTablet);
+    if (isTablet || isDesktop) setIsOpen(false);
+  }, [isMobile]);
+  const [isOpen, setIsOpen] = useState(!isMobile);
   const changeOpen = () => {
-    if (!isTablet) setIsOpen(true);
+    if (!isMobile) setIsOpen(true);
   };
 
   return (
