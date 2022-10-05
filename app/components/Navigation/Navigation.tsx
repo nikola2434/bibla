@@ -9,8 +9,9 @@ import { IMenuItems } from "./Menu/MenuInterface";
 import { getGenreUrl } from "../../../config/url.config";
 import { IoIosArrowBack } from "react-icons/io";
 import cn from "classnames";
+import { useMatchMedia } from "../../../hooks/useMatchMedia";
 
-export const Navigation: FC<{ widthWindow: number }> = ({ widthWindow }) => {
+export const Navigation: FC = () => {
   const { data, isLoading } = useGetGenresQuery(
     { limit: 10 },
     {
@@ -26,12 +27,13 @@ export const Navigation: FC<{ widthWindow: number }> = ({ widthWindow }) => {
       }),
     }
   );
+  const { isTablet, isDesktop } = useMatchMedia();
   useEffect(() => {
-    if (widthWindow > 900) setIsOpen(false);
-  }, [widthWindow]);
-  const [isOpen, setIsOpen] = useState(false);
+    if (!isDesktop) setIsOpen(false);
+  }, [isTablet]);
+  const [isOpen, setIsOpen] = useState(!isTablet);
   const changeOpen = () => {
-    if (widthWindow < 900) setIsOpen(true);
+    if (!isTablet) setIsOpen(true);
   };
 
   return (

@@ -4,10 +4,9 @@ const nextConfig = {
   optimizeFonts: false,
   swcMinify: true,
   experimental: { esmExternals: true },
-  env: { APP_SERVER_URL: "" },
+
   images: {
-    loader: "akamai",
-    path: "",
+    
     domains: [
       "knijky.ru",
       "static.insales-cdn.com",

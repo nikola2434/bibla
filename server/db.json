@@ -384,7 +384,8 @@
           "LesTroisMousquetaires",
           "Neverwhere",
           "Horns",
-          "AmericanGods"
+          "AmericanGods",
+          "f1839f029b6f"
         ]
       },
       "id": "user2",
@@ -392,8 +393,8 @@
       "refreshToken": "P&SM%34@cTL!vV"
     },
     {
-      "accessToken": "(f08E№WavZsKY+",
-      "refreshToken": "hAVO86rv10TyUk",
+      "accessToken": "gYH6kM;A;tk5_4",
+      "refreshToken": "j!*F+bT7*A*tlu",
       "id": "user5",
       "user": {
         "_id": "user5",
@@ -401,6 +402,18 @@
         "password": "user5",
         "isAdmin": false
       }
+    },
+    {
+      "user": {
+        "_id": "f1839eff271b",
+        "login": "user@qwjeq.coqw",
+        "password": "qweqweqw",
+        "isAdmin": false,
+        "favoriteBooks": []
+      },
+      "id": "f1839eff271b",
+      "accessToken": "1o+(878k9RVl;U",
+      "refreshToken": "I6isUTw9bWWoNE"
     }
   ],
   "sliders": [
