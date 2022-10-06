@@ -4,9 +4,9 @@ const nextConfig = {
   optimizeFonts: false,
   swcMinify: true,
   experimental: { esmExternals: true },
+  
 
   images: {
-    
     domains: [
       "knijky.ru",
       "static.insales-cdn.com",

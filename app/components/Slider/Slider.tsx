@@ -23,6 +23,7 @@ const Slider: FC<ISliderProps> = ({ slides }) => {
               key={slides[currentIndex].title}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
+              className={style.slide_container}
               transition={{
                 opacity: { duration: 1 },
               }}
