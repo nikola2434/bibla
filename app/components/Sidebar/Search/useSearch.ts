@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from "react";
 import { useDebounce } from "../../../../hooks/useDebounce";
-import { useGetAllBooksQuery } from "../../../../services/booksApi";
+import { useGetAllBooksQuery } from "../../../../services/books/booksApi";
 
 export const useSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const debouncedSearch = useDebounce(searchTerm, 1000);
   const { data, isSuccess } = useGetAllBooksQuery(
-    { search: debouncedSearch },
+    { searchTerm: debouncedSearch },
     {
       skip: !debouncedSearch,
     }

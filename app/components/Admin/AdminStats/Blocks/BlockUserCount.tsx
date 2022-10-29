@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useGetUsersQuery } from "../../../../../services/usersApi";
+import { useGetUsersQuery } from "../../../../../services/users/usersApi";
 import { TypeMaterialIcons } from "../../../../../shared/types/icons";
 import { Icons } from "../../../../UI/Icons";
 import { SkeletonLoading } from "../../../Skeleton/Skeleton";

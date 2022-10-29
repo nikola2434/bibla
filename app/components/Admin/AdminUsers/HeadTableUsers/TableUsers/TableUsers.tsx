@@ -8,29 +8,23 @@ interface ITableUsersProps {
   data: string[][];
   title: string;
   page: number;
-  deleteUsers: (id: string) => void;
-  refetch: () => void;
-  setIdUserDelete: (id: string) => void;
   setPage: (page: number) => void;
+  deleteEntity: (id: string) => Promise<void>;
 }
 
 export const TableUsers: FC<ITableUsersProps> = ({
   data,
   page,
-  deleteUsers,
-  refetch,
+  deleteEntity,
   title,
-  setIdUserDelete,
   setPage,
 }) => {
   function handleBackPage() {
     setPage(page - 1);
-    refetch;
   }
 
   function handleNextPage() {
     setPage(page + 1);
-    refetch();
   }
 
   return (
@@ -41,9 +35,7 @@ export const TableUsers: FC<ITableUsersProps> = ({
             <TableItem
               key={item[item.length - 1]}
               characteristics={[...item]}
-              setIdUserDelete={setIdUserDelete}
-              deleteUsers={deleteUsers}
-              refetch={refetch}
+              deleteEntity={deleteEntity}
               id={item[item.length - 1]}
             />
           ))}

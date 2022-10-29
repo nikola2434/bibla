@@ -3,17 +3,17 @@ import { Logo } from "../Logo/Logo";
 import { ContainerMenu } from "./Menu/ContainerMenu";
 import style from "./Navigation.module.scss";
 import { MenuData } from "./Menu/MenuData";
-import { useGetGenresQuery } from "../../../services/genresApi";
 import { SkeletonLoading } from "../Skeleton/Skeleton";
 import { IMenuItems } from "./Menu/MenuInterface";
 import { getGenreUrl } from "../../../config/url.config";
 import { IoIosArrowBack } from "react-icons/io";
 import cn from "classnames";
 import { useMatchMedia } from "../../../hooks/useMatchMedia";
+import { useGetAllGenresQuery } from "../../../services/genres/genresApi";
 
 export const Navigation: FC = () => {
-  const { data, isLoading } = useGetGenresQuery(
-    { limit: 10 },
+  const { data, isLoading } = useGetAllGenresQuery(
+    { searchTerm: "" },
     {
       selectFromResult: ({ data, isLoading }) => ({
         isLoading: isLoading,

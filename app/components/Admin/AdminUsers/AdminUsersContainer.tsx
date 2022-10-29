@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useDeleteUsersMutation } from "../../../../services/usersApi";
+import { useDeleteUsersMutation } from "../../../../services/users/usersApi";
 import { IUser } from "../../../UI/types";
 import { Heading } from "../../Heading/Heading";
 import { InputSearch } from "../../InputSearch/InputSearch";
@@ -15,22 +15,19 @@ export const AdminUsersContainer: FC = () => {
     searchTerm,
     isLoading,
     handleSearch,
-    refetch,
-    setIdUserDelete,
     page,
     setPage,
+    deleteEntity,
   } = useSearchAdmin();
 
   function getData(data: IUser[]) {
     const arrayUsers: string[][] = [];
     data.forEach((item) =>
-      arrayUsers.push([item.login, String(item.isAdmin), item._id])
+      arrayUsers.push([item.email, String(item.isAdmin), item._id])
     );
     return arrayUsers;
   }
 
-  const [deleteUsers] = useDeleteUsersMutation();
-  console.log(data);
   return (
     <div className={style.admin_users}>
       <Heading title="Users" />
@@ -44,12 +41,10 @@ export const AdminUsersContainer: FC = () => {
         ) : (
           <TableUsers
             data={data ? getData(data) : []} // в массиве последним элементом должен быть ID
-            deleteUsers={deleteUsers}
-            refetch={refetch}
-            setIdUserDelete={setIdUserDelete}
             title={"Users"}
             page={page}
             setPage={setPage}
+            deleteEntity={deleteEntity}
           />
         )}
       </div>

@@ -11,16 +11,13 @@ interface IFavoriteBookProps {
 }
 
 const FavoriteButton: FC<IFavoriteBookProps> = ({ user, bookId }) => {
-  const { handleFavoriteBook } = useAddFavorite({
-    userRedux: user,
-    bookId: bookId,
-  });
+  const { handleFavoriteBook } = useAddFavorite();
   const isFavorite = user.favoriteBooks.includes(bookId);
 
   return (
     <div className={style.button}>
       <button
-        onClick={() => handleFavoriteBook(isFavorite, bookId)}
+        onClick={() => handleFavoriteBook(bookId)}
         className={cn(style.heart, {
           [style.favorite]: isFavorite,
           [style.not_favorite]: !isFavorite,

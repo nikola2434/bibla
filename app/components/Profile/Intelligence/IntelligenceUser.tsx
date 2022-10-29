@@ -22,7 +22,7 @@ const IntelligenceUser: FC<IIntelligenceProps> = ({ user }) => {
     changeImage,
     setChangeImage,
     updateImage,
-  } = useChangeUser(setValue, user?.login);
+  } = useChangeUser(setValue, user?.email);
   return (
     <div className={style.intelligence}>
       <div className={style.image}>
@@ -51,7 +51,7 @@ const IntelligenceUser: FC<IIntelligenceProps> = ({ user }) => {
               <Button buttonStyle={1}>Update</Button>
             </form>
           ) : (
-            <div className={style.login}>{user?.login}</div>
+            <div className={style.login}>{user?.email}</div>
           )}
           <button
             onClick={() => setChangeData(!changeData)}

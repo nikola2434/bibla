@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useDeleteAuthorsMutation } from "../../../../services/authorsApi";
+import { useDeleteAuthorsMutation } from "../../../../services/authors/authorsAdminApi";
 import { IAuthor } from "../../../UI/types";
 import Button from "../../Elements/Button/Button";
 import { Heading } from "../../Heading/Heading";
@@ -16,11 +16,10 @@ export const AdminAuthorsContainer: FC = () => {
     searchTerm,
     isLoading,
     handleSearch,
-    refetch,
-    setIdUserDelete,
     setPage,
     page,
     createAuthor,
+    deleteEntity,
   } = useSearchAdminAuthors();
 
   function getData(data: IAuthor[]) {
@@ -30,13 +29,11 @@ export const AdminAuthorsContainer: FC = () => {
         item.nameAuthor,
         item.country,
         item.DateOfBirth,
-        item.id,
+        item._id,
       ])
     );
     return arrayBooks;
   }
-
-  const [deleteAuthor] = useDeleteAuthorsMutation();
 
   return (
     <div className={style.admin_users}>
@@ -58,9 +55,7 @@ export const AdminAuthorsContainer: FC = () => {
         ) : (
           <TableUsers
             data={data ? getData(data) : []}
-            deleteUsers={deleteAuthor}
-            refetch={refetch}
-            setIdUserDelete={setIdUserDelete}
+            deleteEntity={deleteEntity}
             title={"Authors"}
             setPage={setPage}
             page={page}

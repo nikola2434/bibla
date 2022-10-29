@@ -1,3 +1,4 @@
+import { IMenuItems } from "./../components/Navigation/Menu/MenuInterface";
 export type TypeGenre =
   | "Detective"
   | "Novel"
@@ -5,7 +6,7 @@ export type TypeGenre =
   | "Thriller"
   | "Fantasy"
   | "Science-fiction"
-  | "Non—fiction" ;
+  | "Non—fiction";
 
 export interface IData {
   day: string | null;
@@ -19,21 +20,21 @@ export interface IBook {
   genre: TypeGenre;
   poster: string;
   description: string;
-  id: string;
+  _id: string;
 }
 
 export interface IAuthor {
   nameAuthor: string;
   country: string;
-  id: string;
+  _id: string;
   DateOfBirth: string;
-  BooksWritten: string[];
+  BooksWritten: IBook[];
   avatar: string;
 }
 
 export interface IUser {
   _id: string;
-  login: string;
+  email: string;
   password: string;
   isAdmin: boolean;
   avatar?: string;
@@ -50,4 +51,9 @@ export interface IRequest {
 export interface ITrendingResponse {
   description: string;
   PopularBooks: IBook[];
+}
+
+export interface IUploadsFiles {
+  url: string;
+  name: string;
 }

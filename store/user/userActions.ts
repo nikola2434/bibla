@@ -9,17 +9,8 @@ export const login = createAsyncThunk<
   { data: IEmailPassword; setError: UseFormSetError<IEmailPassword> }
 >("auth/login", async ({ setError, data }, thunkApi) => {
   try {
-    const AuthResponse = await userApi.login(
-      data.login,
-      setError,
-      data.password
-    );
-    if (AuthResponse.length === 0) {
-      setError("login", { message: "Wrong password or email!" });
-      setError("password", { message: "Wrong password or email!" });
-      return thunkApi.rejectWithValue("");
-    }
-    return AuthResponse[0];
+    const AuthResponse = await userApi.login(data.login, data.password);
+    return AuthResponse;
   } catch (error) {
     return thunkApi.rejectWithValue(error);
   }
@@ -44,25 +35,14 @@ export const logout = createAsyncThunk("auth/logout", async () => {
 
 /* getTokens */
 
-export const getTokens = createAsyncThunk<IAuthResponse, { id: string }>(
+export const getTokens = createAsyncThunk<IAuthResponse, undefined>(
   "auth/getTokens",
-  async ({ id }, thunkApi) => {
+  async (_, thunkApi) => {
     try {
-      const response = await userApi.getNewTokens(id);
+      const response = await userApi.getNewTokens();
       return response;
     } catch (error) {
-      return thunkApi.rejectWithValue(error);
-    }
-  }
-);
-
-export const update = createAsyncThunk<IAuthResponse, { id: string }>(
-  "auth/update",
-  async ({ id }, thunkApi) => {
-    try {
-      const response = await userApi.updateUser(id);
-      return response;
-    } catch (error) {
+      thunkApi.dispatch(logout());
       return thunkApi.rejectWithValue(error);
     }
   }

@@ -4,7 +4,7 @@ import Catallog, {
 } from "../../app/components/Catallog/Catallog";
 import { IItemGalleryProps } from "../../app/components/Galeria/Gallery";
 import { NextAuthPage } from "../../app/UI/authTypes";
-import { axiocBookApi, axiosGenreApi } from "../../services/axios";
+import { axiosGenreApi } from "../../services/axios/axios";
 
 const CatallogPage: NextAuthPage<ICatallogProps> = ({
   Books,
@@ -35,14 +35,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const genre = await axiosGenreApi.getGenre(String(params?.slug));
-    const books = await axiocBookApi.getBooksId(genre.books || []);
+    console.log(genre);
     return {
       props: {
         title: genre.title,
         description: genre.description,
-        Books: books.map((book) => {
+        Books: genre.books?.map((book) => {
           return {
-            link: book.id,
+            link: book._id,
             poster: book.poster,
             title: book.title,
             subtitle: book.author,

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useAppSelector } from "../../../hooks/useAppSelector";
-import { useGetAllBooksQuery } from "../../../services/booksApi";
+import { useGetFavoriteQuery } from "../../../services/users/usersApi";
+
 import Auth from "../Auth/Auth";
 import Description from "../Description/Description";
 import Gallery, { IItemGalleryProps } from "../Galeria/Gallery";
@@ -12,25 +13,20 @@ import style from "./MyBooks.module.scss";
 
 const MyBooks: FC = () => {
   const { user } = useAppSelector((state) => state.users);
-  const { favoriteBooks, isLoading } = useGetAllBooksQuery(
-    { search: "" },
-    {
-      selectFromResult: ({ isLoading, data }) => ({
-        favoriteBooks: data
-          ?.filter((book) => user?.favoriteBooks.includes(book.id))
-          .map(
-            (item) =>
-              ({
-                link: item.id,
-                poster: item.poster,
-                title: item.title,
-                subtitle: item.author,
-              } as IItemGalleryProps)
-          ),
-        isLoading,
-      }),
-    }
-  );
+  const { favoriteBooks, isLoading } = useGetFavoriteQuery(undefined, {
+    selectFromResult: ({ isLoading, data }) => ({
+      favoriteBooks: data?.map(
+        (item) =>
+          ({
+            link: item._id,
+            poster: item.poster,
+            title: item.title,
+            subtitle: item.author,
+          } as IItemGalleryProps)
+      ),
+      isLoading,
+    }),
+  });
 
   if (!user) return <Auth />;
 

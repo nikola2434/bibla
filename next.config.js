@@ -4,7 +4,6 @@ const nextConfig = {
   optimizeFonts: false,
   swcMinify: true,
   experimental: { esmExternals: true },
-  
 
   images: {
     domains: [
@@ -32,6 +31,7 @@ const nextConfig = {
       "img-gorod.ru",
       "m.media-amazon.com",
       "pictures.abebooks.com",
+      "localhost",
     ],
   },
 };

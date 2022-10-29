@@ -4,15 +4,16 @@ import { IAuthor } from "./../../../../UI/types";
 import { useRouter } from "next/router";
 import { SubmitHandler, UseFormSetValue } from "react-hook-form";
 import {
-  useAuthorByIdQuery,
+  updateAuthor,
   useAuthorUpdateMutation,
-} from "../../../../../services/authorsApi";
+} from "../../../../../services/authors/authorsAdminApi";
+import { useGetByIdAuthorQuery } from "../../../../../services/authors/authorsApi";
 
-export const useUpdateAuthor = (setValue: UseFormSetValue<IAuthor>) => {
+export const useUpdateAuthor = (setValue: UseFormSetValue<updateAuthor>) => {
   const { push, query } = useRouter();
 
   const AuthorId = String(query.id);
-  const { data, isSuccess, isLoading } = useAuthorByIdQuery(AuthorId, {
+  const { data, isSuccess, isLoading } = useGetByIdAuthorQuery(AuthorId, {
     skip: !AuthorId,
   });
 
@@ -22,13 +23,16 @@ export const useUpdateAuthor = (setValue: UseFormSetValue<IAuthor>) => {
       setValue("country", data.country);
       setValue("avatar", data.avatar);
       setValue("DateOfBirth", data.DateOfBirth);
-      setValue("BooksWritten", data.BooksWritten);
+      setValue(
+        "BooksWritten",
+        data.BooksWritten.map((book) => book._id)
+      );
     }
   }, [isSuccess]);
 
   const [updateAuthor] = useAuthorUpdateMutation();
 
-  const onSubmit: SubmitHandler<IAuthor> = async (data) => {
+  const onSubmit: SubmitHandler<updateAuthor> = async (data) => {
     await updateAuthor({ data, id: AuthorId });
     push(getAuthorUrl(AuthorId));
   };

@@ -11,8 +11,10 @@ import { generateLink } from "../../../../../config/generateLink";
 import Button from "../../../Elements/Button/Button";
 import { DynamicTextEditor } from "../books/BookEditContainer";
 import { DynamicSelect } from "../authors/AuthorEditContainer";
-import { useGetAllBooksQuery } from "../../../../../services/booksApi";
+
 import { IOption } from "../../../Elements/Select/select_interface";
+
+import { useGetAllBooksQuery } from "../../../../../services/books/booksApi";
 
 export const GenreEditContainer: FC = () => {
   const {
@@ -26,11 +28,11 @@ export const GenreEditContainer: FC = () => {
   const { isLoading, onSubmit } = useUpdateGenre(setValue);
 
   const { options, isLoading: isBooksLoading } = useGetAllBooksQuery(
-    { search: "" },
+    {},
     {
       selectFromResult: ({ data, isLoading }) => ({
         options: data?.map(
-          (item) => ({ label: item.title, value: item.id } as IOption)
+          (item) => ({ label: item.title, value: item._id } as IOption)
         ),
         isLoading,
       }),

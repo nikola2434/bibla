@@ -1,9 +1,8 @@
 import { IUser } from "./../../app/UI/types";
 
 export interface ITokens {
-  accessToken: string;
+  assetToken: string;
   refreshToken: string;
-  id: string;
 }
 
 export interface IInitialState {

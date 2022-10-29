@@ -1,0 +1,58 @@
+@import "../../layout/layout.module.scss";
+.field {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  min-width: 600px;
+  position: relative;
+  margin-top: 30px;
+
+  .input {
+    display: block;
+    font-size: 24px;
+    color: $secondary_color;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    .placeholder {
+      margin-bottom: 60px;
+    }
+    .file_input {
+      color: transparent;
+      &::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+      &::before {
+        content: "Choose file";
+        color: $secondary_color;
+        display: inline-block;
+        background-color: $color_hover;
+        border: 2px solid $secondary_color;
+        border-radius: 20px;
+        padding: 5px 8px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        text-shadow: 1px 1px #fff;
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+  }
+  .image {
+    position: absolute;
+    left: 140px;
+    border-radius: 10px;
+    border: 2px solid $secondary_color;
+    width: 150px;
+    height: 198px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    .poster {
+      border-radius: 10px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { useDeleteBookMutation } from "../../../../services/booksApi";
-import { useDeleteGenreMutation } from "../../../../services/genresApi";
+
+import { useDeleteGenreMutation } from "../../../../services/genres/genresAdminApi";
 import Button from "../../Elements/Button/Button";
 import { Heading } from "../../Heading/Heading";
 import { InputSearch } from "../../InputSearch/InputSearch";
@@ -17,11 +17,10 @@ export const AdminGenreContainer: FC = () => {
     searchTerm,
     isLoading,
     handleSearch,
-    refetch,
-    setIdUserDelete,
     setPage,
     page,
     createGenre,
+    deleteEntity,
   } = useSearchAdminGenre();
 
   function getData(data: IMenuItems[]) {
@@ -30,13 +29,11 @@ export const AdminGenreContainer: FC = () => {
       arrayMenuItems.push([
         item.title,
         String(item.books?.length),
-        String(item.id),
+        String(item._id),
       ])
     );
     return arrayMenuItems;
   }
-
-  const [deleteGenre] = useDeleteGenreMutation();
 
   return (
     <div className={style.admin_users}>
@@ -59,9 +56,7 @@ export const AdminGenreContainer: FC = () => {
         ) : (
           <TableUsers
             data={data ? getData(data) : []}
-            deleteUsers={deleteGenre}
-            refetch={refetch}
-            setIdUserDelete={setIdUserDelete}
+            deleteEntity={deleteEntity}
             title={"Genres"}
             setPage={setPage}
             page={page}

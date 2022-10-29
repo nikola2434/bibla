@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useDeleteBookMutation } from "../../../../services/booksApi";
+import { useDeleteBookMutation } from "../../../../services/books/booksAdminApi";
 import { IBook } from "../../../UI/types";
 import Button from "../../Elements/Button/Button";
 import { Heading } from "../../Heading/Heading";
@@ -16,22 +16,19 @@ export const AdminBooksContainer: FC = () => {
     searchTerm,
     isLoading,
     handleSearch,
-    refetch,
-    setIdUserDelete,
     setPage,
     page,
     createBook,
+    deleteEntity,
   } = useSearchAdminBooks();
 
   function getData(data: IBook[]) {
     const arrayBooks: string[][] = [];
     data.map((item) =>
-      arrayBooks.push([item.title, item.author, String(item.rating), item.id])
+      arrayBooks.push([item.title, item.author, String(item.rating), item._id])
     );
     return arrayBooks;
   }
-
-  const [deleteBook] = useDeleteBookMutation();
 
   return (
     <div className={style.admin_users}>
@@ -53,9 +50,7 @@ export const AdminBooksContainer: FC = () => {
         ) : (
           <TableUsers
             data={data ? getData(data) : []}
-            deleteUsers={deleteBook}
-            refetch={refetch}
-            setIdUserDelete={setIdUserDelete}
+            deleteEntity={deleteEntity}
             title={"Books"}
             setPage={setPage}
             page={page}

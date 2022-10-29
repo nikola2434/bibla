@@ -3,7 +3,7 @@ import { IInitialState } from "./userInterface";
 
 import { createSlice } from "@reduxjs/toolkit";
 
-import { login, register, logout, getTokens, update } from "./userActions";
+import { login, register, logout, getTokens } from "./userActions";
 
 const initialState: IInitialState = {
   user: getLocalStorage("user"),
@@ -42,9 +42,6 @@ const userSlice = createSlice({
         state.user = null;
       })
       .addCase(getTokens.fulfilled, (state, { payload }) => {
-        state.user = payload.user;
-      })
-      .addCase(update.fulfilled, (state, { payload }) => {
         state.user = payload.user;
       });
   },

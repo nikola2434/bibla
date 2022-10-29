@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FC} from "react";
+import { FC } from "react";
 
 import { getAuthorUrl, getGenreUrl } from "../../../../config/url.config";
 import { useAppSelector } from "../../../../hooks/useAppSelector";
-import { axiosAuthorApi } from "../../../../services/axios";
+import { axiosAuthorApi } from "../../../../services/axios/axios";
 import { Icons } from "../../../UI/Icons";
 import { IBook } from "../../../UI/types";
 import FavoriteButton from "./FavoritButton/FavoriteButton";
 import style from "./Details.module.scss";
+import { generateLink } from "../../../../config/generateLink";
 
 const Details: FC<{ book: IBook }> = ({ book }) => {
   const { user } = useAppSelector((state) => state.users);
@@ -17,7 +18,7 @@ const Details: FC<{ book: IBook }> = ({ book }) => {
 
   const fetchIdAuthor = async (title: string) => {
     const author = await axiosAuthorApi.getAuthorByTitle(title);
-    push(getAuthorUrl(author.id));
+    push(getAuthorUrl(author._id));
   };
   return (
     <div className={style.details}>
@@ -45,7 +46,7 @@ const Details: FC<{ book: IBook }> = ({ book }) => {
           </div>
         )}
 
-        <Link href={getGenreUrl(book.genre)}>
+        <Link href={getGenreUrl(generateLink(book.genre))}>
           <a className={style.genre}>{book.genre}</a>
         </Link>
         <div className={style.rating}>

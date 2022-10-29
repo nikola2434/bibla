@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import { IItemGalleryProps } from "../app/components/Galeria/Gallery";
 import { ICatallogProps } from "../app/components/Catallog/Catallog";
 import { NextAuthPage } from "../app/UI/authTypes";
-import { PopularBooksApi } from "../services/axios";
+import { PopularBooksApi } from "../services/axios/axios";
 import Catallog from "../app/components/Catallog/Catallog";
 
 const trendingPage: NextAuthPage<ICatallogProps> = ({

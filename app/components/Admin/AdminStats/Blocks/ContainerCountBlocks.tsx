@@ -1,50 +1,45 @@
 import { FC } from "react";
-import { useGetAllAuthorsQuery } from "../../../../../services/authorsApi";
-import { useGetAllBooksQuery } from "../../../../../services/booksApi";
-import { useGetGenresQuery } from "../../../../../services/genresApi";
-import { useGetUsersQuery } from "../../../../../services/usersApi";
+import { useGetCountAuthorsQuery } from "../../../../../services/authors/authorsAdminApi";
+import { useGetCountBooksQuery } from "../../../../../services/books/booksAdminApi";
+import { useGetCountGenresQuery } from "../../../../../services/genres/genresAdminApi";
+
+import { useGetCountUsersQuery } from "../../../../../services/users/usersApi";
 import { BlockUserCount } from "./BlockUserCount";
 
 export const ContainerCountBlocks: FC = () => {
-  const { countUser, isLoading: isLoadingUser } = useGetUsersQuery(undefined, {
-    selectFromResult: ({ data, isLoading }) => ({
-      countUser: Number(data?.length),
-      isLoading,
-    }),
-  });
+  const { data: countUsers, isLoading: isLoadingUser } =
+    useGetCountUsersQuery(undefined);
 
-  const { data: countBooks, isLoading: isLoadingBooks } = useGetAllBooksQuery({
-    search: "",
-  });
+  const { data: countBooks, isLoading: isLoadingBooks } =
+    useGetCountBooksQuery(undefined);
 
   const { data: countAuthors, isLoading: isLoadingAuthors } =
-    useGetAllAuthorsQuery({ search: "" });
+    useGetCountAuthorsQuery(undefined);
 
-  const { data: countGenres, isLoading: isLoadingGenres } = useGetGenresQuery(
-    {}
-  );
+  const { data: countGenres, isLoading: isLoadingGenres } =
+    useGetCountGenresQuery(undefined);
   return (
     <>
       <BlockUserCount
-        countUser={countUser}
+        countUser={countUsers || 0}
         icon={"MdOutlineSupervisorAccount"}
         isLoading={isLoadingUser}
         title="Users"
       />
       <BlockUserCount
-        countUser={countBooks ? countBooks.length : 0}
+        countUser={countBooks || 0}
         icon={"MdBook"}
         isLoading={isLoadingBooks}
         title="Books"
       />
       <BlockUserCount
-        countUser={countAuthors ? countAuthors.length : 0}
+        countUser={countAuthors || 0}
         icon={"MdAccountCircle"}
         isLoading={isLoadingAuthors}
         title="Authors"
       />
       <BlockUserCount
-        countUser={countGenres ? countGenres.length : 0}
+        countUser={countGenres || 0}
         icon={"MdBookmarks"}
         isLoading={isLoadingGenres}
         title="Genres"

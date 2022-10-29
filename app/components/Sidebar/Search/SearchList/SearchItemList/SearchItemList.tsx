@@ -7,7 +7,7 @@ import style from "./SearchItemList.module.scss";
 
 export const SearchItemList: FC<{ book: IBook }> = ({ book }) => {
   return (
-    <Link href={getBookUrl(book.id)}>
+    <Link href={getBookUrl(book._id)}>
       <a className={style.container_item}>
         <Image
           src={book.poster}

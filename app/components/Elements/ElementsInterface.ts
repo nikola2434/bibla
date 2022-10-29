@@ -25,3 +25,11 @@ export interface IEditorProps extends Omit<TypeEDitorProps, "editorState"> {
   value: string | undefined;
   onChange: (...event: any[]) => void;
 }
+
+export interface IFieldUploadProps {
+  folder?: string;
+  onChange: (...event: any[]) => void;
+  placeholder: string;
+  error?: FieldError;
+  image?: string;
+}

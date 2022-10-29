@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Author, { IAuthorProps } from "../../app/components/Author/Author";
 import { IItemGalleryProps } from "../../app/components/Galeria/Gallery";
 import { NextAuthPage } from "../../app/UI/authTypes";
-import { axiocBookApi, axiosAuthorApi } from "../../services/axios";
+import {  axiosAuthorApi } from "../../services/axios/axios";
 
 const AuthorPage: NextAuthPage<IAuthorProps> = ({ author, booksWritten }) => {
   return <Author author={author} booksWritten={booksWritten} />;
@@ -14,7 +14,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const authors = await axiosAuthorApi.getAuthors();
     const paths = authors.map((author) => ({
-      params: { id: author.id },
+      params: { id: author._id },
     }));
     return {
       paths,
@@ -23,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   } catch (error) {
     return {
       paths: [],
-      fallback: false
+      fallback: false,
     };
   }
 };
@@ -31,13 +31,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const author = await axiosAuthorApi.getAuthor(String(params?.id));
-    const books = await axiocBookApi.getBooksId(author.BooksWritten);
     return {
       props: {
         author: author,
-        booksWritten: books.map((book) => {
+        booksWritten: author.BooksWritten.map((book) => {
           return {
-            link: book.id,
+            link: book._id,
             poster: book.poster,
             title: book.title,
             subtitle: book.author,
@@ -54,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           BooksWritten: [],
           country: "",
           DateOfBirth: "",
-          id: "",
+          _id: "",
           nameAuthor: "",
         },
         booksWritten: [],

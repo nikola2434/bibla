@@ -2,16 +2,18 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { IBook } from "./../../../../UI/types";
 import { SubmitHandler, UseFormSetValue } from "react-hook-form";
-import {
-  useBookByIdQuery,
-  useUpdateBookMutation,
-} from "../../../../../services/booksApi";
+
 import { getBookUrl } from "../../../../../config/url.config";
+import { useGetByIdBookQuery } from "../../../../../services/books/booksApi";
+import {
+  updateBook,
+  useUpdateBookMutation,
+} from "../../../../../services/books/booksAdminApi";
 
 export const useUpdateBook = (setValue: UseFormSetValue<IBook>) => {
   const { push, query } = useRouter();
   const bookId = String(query.id);
-  const { data, isLoading, isSuccess } = useBookByIdQuery(bookId, {
+  const { data, isLoading, isSuccess } = useGetByIdBookQuery(bookId, {
     skip: !bookId,
   });
 
@@ -27,8 +29,7 @@ export const useUpdateBook = (setValue: UseFormSetValue<IBook>) => {
   }, [isSuccess]);
 
   const [updateBook] = useUpdateBookMutation();
-  const onSubmit: SubmitHandler<IBook> = async (data) => {
-
+  const onSubmit: SubmitHandler<updateBook> = async (data) => {
     await updateBook({ data, id: bookId });
     push(getBookUrl(bookId));
   };

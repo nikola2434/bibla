@@ -9,9 +9,10 @@ import Button from "../../../Elements/Button/Button";
 import dynamic from "next/dynamic";
 import { IEditorProps } from "../../../Elements/ElementsInterface";
 import { DynamicSelect } from "../authors/AuthorEditContainer";
-import { useGetAllAuthorsQuery } from "../../../../../services/authorsApi";
 import { IOption } from "../../../Elements/Select/select_interface";
-import { useGetGenresQuery } from "../../../../../services/genresApi";
+import { useGetAllAuthorsQuery } from "../../../../../services/authors/authorsApi";
+import { useGetAllGenresQuery } from "../../../../../services/genres/genresApi";
+import { FieldUploadFile } from "../../../Elements/UploadsFiles/FieldUploadFile";
 
 export const DynamicTextEditor = dynamic<IEditorProps>(
   () =>
@@ -32,7 +33,7 @@ const BookEditContainer: FC = () => {
   const { onSubmit, isLoading } = useUpdateBook(setValue);
 
   const { optionsAuthors, isLoading: isLoadingAuthors } = useGetAllAuthorsQuery(
-    { search: "" },
+    { searchTerm: undefined },
     {
       selectFromResult: ({ data, isLoading }) => ({
         optionsAuthors: data?.map(
@@ -43,7 +44,7 @@ const BookEditContainer: FC = () => {
       }),
     }
   );
-  const { optionsGenres, isLoading: isLoadingGenres } = useGetGenresQuery(
+  const { optionsGenres, isLoading: isLoadingGenres } = useGetAllGenresQuery(
     {},
     {
       selectFromResult: ({ data, isLoading }) => ({
@@ -106,13 +107,21 @@ const BookEditContainer: FC = () => {
                 />
               </div>
               <div className={style.field}>
-                <Field
-                  type={"text"}
-                  errors={errors.poster}
-                  placeholder="Poster"
-                  {...register("poster", {
-                    required: "This field must be filled!",
-                  })}
+                <Controller
+                  control={control}
+                  name="poster"
+                  render={({
+                    field: { value, onChange },
+                    fieldState: { error },
+                  }) => (
+                    <FieldUploadFile
+                      onChange={onChange}
+                      placeholder="Poster"
+                      error={error}
+                      folder="books"
+                      image={value}
+                    />
+                  )}
                 />
               </div>
               <div className={style.field}></div>

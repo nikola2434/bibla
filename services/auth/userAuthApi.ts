@@ -1,36 +1,29 @@
-import { UseFormSetError } from "react-hook-form";
-
-import {
-  IAuthResponse,
-  IEmailPassword,
-} from "./../../store/user/userInterface";
-import { classicAxios, getContentType } from "./../axios";
-import { getNewUser, saveLocalStage } from "./authHelper";
+import { IAuthResponse } from "./../../store/user/userInterface";
+import { classicAxios, getContentType } from "../axios/axios";
+import { saveLocalStage } from "./authHelper";
 import { removeToken } from "./authHelper";
 import Cookies from "js-cookie";
 
 export const userApi = {
-  async login(
-    login: string,
-    setError: UseFormSetError<IEmailPassword>,
-    password?: string
-  ) {
-    const response = await classicAxios.get<IAuthResponse[]>(
-      `users?q=${login}`
-    );
-    if (response.data.length !== 0) {
-      saveLocalStage(response.data[0]);
+  async login(email: string, password: string) {
+    const response = await classicAxios.post<IAuthResponse>(`/auth/login`, {
+      email,
+      password,
+    });
+    if (response.data.assetToken) {
+      saveLocalStage(response.data);
     }
     return response.data;
   },
 
   async register(email: string, password: string) {
-    const newUser = getNewUser(email, password);
-    const response = await classicAxios.post<IAuthResponse>("users", newUser, {
-      headers: getContentType(),
+    const response = await classicAxios.post<IAuthResponse>("auth/register", {
+      email,
+      password,
     });
-
-    if (response.data.accessToken) saveLocalStage(response.data);
+    if (response.data.assetToken) {
+      saveLocalStage(response.data);
+    }
 
     return response.data;
   },
@@ -40,26 +33,17 @@ export const userApi = {
     localStorage.removeItem("user");
   },
 
-  async getNewTokens(id: string) {
+  async getNewTokens() {
     const refreshToken = Cookies.get("refreshToken");
-    const user = await classicAxios.get<IAuthResponse>(`users/${id}`);
-    const response = await classicAxios.put<IAuthResponse>(
-      `users/${id}`,
+    const response = await classicAxios.post<IAuthResponse>(
+      "/auth/access-token",
       {
-        ...user,
-        refreshToken,
-      },
-      { headers: getContentType() }
+        refreshToken: refreshToken,
+      }
     );
-
-    return response.data;
-  },
-
-  async updateUser(id: string) {
-    const user = await classicAxios.get<IAuthResponse>(`users/${id}`);
-    if (user.data.accessToken) {
-      saveLocalStage(user.data);
+    if (response.data.assetToken) {
+      saveLocalStage(response.data);
     }
-    return user.data;
+    return response.data;
   },
 };

@@ -1,20 +1,17 @@
 import { useRouter } from "next/router";
-import { IMenuItems } from "./../../Navigation/Menu/MenuInterface";
-import { ChangeEvent } from "react";
-import { useState, useEffect } from "react";
-import { useDebounce } from "../../../../hooks/useDebounce";
 
-import {
-  useCreateGenreMutation,
-  useGetGenresQuery,
-} from "../../../../services/genresApi";
-import { getRandomID } from "../../../../config/getId";
+import { ChangeEvent } from "react";
+import { useState } from "react";
+import { useDebounce } from "../../../../hooks/useDebounce";
 import { getAdminUrl } from "../../../../config/url.config";
+import { useGetAllGenresQuery } from "../../../../services/genres/genresApi";
+import {
+  useDeleteGenreMutation,
+  useLazyCreateGenreQuery,
+} from "../../../../services/genres/genresAdminApi";
 
 export const useSearchAdminGenre = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
-  const [idUserDelete, setIdUserDelete] = useState("");
 
   const [page, setPage] = useState(1);
 
@@ -22,42 +19,35 @@ export const useSearchAdminGenre = () => {
 
   const debouncedSearch = useDebounce(searchTerm, 1000);
 
-  const { data, isLoading, refetch } = useGetGenresQuery({
-    search: debouncedSearch,
-    id_ne: idUserDelete,
-    limit: 10,
+  const { data, isLoading, refetch } = useGetAllGenresQuery({
+    searchTerm: debouncedSearch,
     page: page,
   });
 
-  const [createGenreApi] = useCreateGenreMutation();
+  const [createGenreApi] = useLazyCreateGenreQuery();
+  const [deleteGenre] = useDeleteGenreMutation();
 
-  const createGenre = () => {
-    const data: IMenuItems = {
-      id: getRandomID(),
-      books: [],
-      title: "",
-      link: "",
-      icons: "MdBook",
-      description:""
-    };
-    createGenreApi({ data }).then(() =>
-      push(getAdminUrl(`genres/edit/${data.id}`))
-    );
+  const createGenre = async () => {
+    const response = await createGenreApi(undefined);
+    push(getAdminUrl(`genres/edit/${response.data?.newId}`));
   };
 
   function handleSearch(e: ChangeEvent<HTMLInputElement>) {
     setSearchTerm(e.target.value);
   }
 
+  const deleteEntity = async (id: string) => {
+    await deleteGenre(id).then(() => refetch());
+  };
+
   return {
     data,
     isLoading,
     handleSearch,
-    refetch,
-    setIdUserDelete,
     searchTerm,
     setPage,
     page,
     createGenre,
+    deleteEntity,
   };
 };

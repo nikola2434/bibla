@@ -7,23 +7,17 @@ import { useRouter } from "next/router";
 
 interface ITableItem {
   characteristics: string[];
-  setIdUserDelete: (id: string) => void;
-  deleteUsers: (id: string) => void;
-  refetch: () => void;
+  deleteEntity: (id: string) => Promise<void>;
   id: string;
 }
 
 export const TableItem: FC<ITableItem> = ({
   characteristics,
-  setIdUserDelete,
-  deleteUsers,
-  refetch,
+  deleteEntity,
   id,
 }) => {
   const handleDeleteUsers = (id: string) => {
-    deleteUsers(id);
-    setIdUserDelete(id);
-    refetch(); // Да, тут сделано через кастыль. Но если делать цивильно - через refetch, то запрос возращает data с удаленным элементом. Видимо json-server не обновляется, я хз
+    deleteEntity(id);
   };
 
   const { push, pathname } = useRouter();

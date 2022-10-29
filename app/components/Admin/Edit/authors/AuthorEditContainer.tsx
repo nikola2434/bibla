@@ -7,9 +7,12 @@ import { SkeletonLoading } from "../../../Skeleton/Skeleton";
 import Field from "../../../Elements/Field/Field";
 import Button from "../../../Elements/Button/Button";
 
-import { useGetAllBooksQuery } from "../../../../../services/booksApi";
 import { IOption, ISelect } from "../../../Elements/Select/select_interface";
 import dynamic from "next/dynamic";
+
+import { useGetAllBooksQuery } from "../../../../../services/books/booksApi";
+import { FieldUploadFile } from "../../../Elements/UploadsFiles/FieldUploadFile";
+import { updateAuthor } from "../../../../../services/authors/authorsAdminApi";
 
 export const DynamicSelect = dynamic<ISelect>(
   () => import("../../../Elements/Select/Select"),
@@ -24,15 +27,15 @@ const AuthorEditContainer: FC = () => {
     handleSubmit,
     getValues,
     control,
-  } = useForm<IAuthor>({ mode: "onChange" });
+  } = useForm<updateAuthor>({ mode: "onChange" });
   const { onSubmit, isLoading } = useUpdateAuthor(setValue);
 
   const { options, isLoading: isBooksLoading } = useGetAllBooksQuery(
-    { search: "" },
+    { searchTerm: undefined },
     {
       selectFromResult: ({ data, isLoading }) => ({
         options: data?.map(
-          (item) => ({ label: item.title, value: item.id } as IOption)
+          (item) => ({ label: item.title, value: item._id } as IOption)
         ),
         isLoading,
       }),
@@ -95,13 +98,21 @@ const AuthorEditContainer: FC = () => {
                 />
               </div>
               <div className={style.field}>
-                <Field
-                  type={"text"}
-                  errors={errors.avatar}
-                  placeholder="Avatar"
-                  {...register("avatar", {
-                    required: "This field must be filled!",
-                  })}
+                <Controller
+                  control={control}
+                  name="avatar"
+                  render={({
+                    field: { value, onChange },
+                    fieldState: { error },
+                  }) => (
+                    <FieldUploadFile
+                      onChange={onChange}
+                      placeholder="Avatar"
+                      error={error}
+                      folder="authors"
+                      image={value}
+                    />
+                  )}
                 />
               </div>
             </div>

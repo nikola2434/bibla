@@ -1,3 +1,4 @@
+import { IBook } from "./../../../UI/types";
 import { TypeMaterialIcons } from "./../../../../shared/types/icons";
 export interface IMenu {
   title: string;
@@ -8,7 +9,7 @@ export interface IMenuItems {
   link: string;
   title: string;
   icons: TypeMaterialIcons;
-  id?: string;
-  books?: string[];
+  _id: string;
+  books?: IBook[];
   description?: string;
 }

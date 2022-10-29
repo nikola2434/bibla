@@ -11,8 +11,6 @@ import { useUpdateUser } from "./useUpdateUser";
 const UserEditContainer: FC = () => {
   const {
     control,
-    register,
-    reset,
     formState: { errors },
     setValue,
     handleSubmit,
