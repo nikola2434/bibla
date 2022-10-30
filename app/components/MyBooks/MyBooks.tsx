@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useAppSelector } from "../../../hooks/useAppSelector";
+import { useGetEvaluatedBooksQuery } from "../../../services/ratings/ratingApi";
 import { useGetFavoriteQuery } from "../../../services/users/usersApi";
 
 import Auth from "../Auth/Auth";
@@ -28,8 +29,23 @@ const MyBooks: FC = () => {
     }),
   });
 
-  if (!user) return <Auth />;
+  const { RatedBooks, isLoading: loadingRatedBooks } =
+    useGetEvaluatedBooksQuery(undefined, {
+      selectFromResult: ({ isLoading, data }) => ({
+        RatedBooks: data?.map(
+          (book) =>
+            ({
+              link: book.bookId._id,
+              poster: book.bookId.poster,
+              title: book.bookId.title,
+              subtitle: book.bookId.author,
+            } as IItemGalleryProps)
+        ),
+        isLoading,
+      }),
+    });
 
+  if (!user) return <Auth />;
   return (
     <Meta title="Recent activity">
       <div className={style.my_books}>
@@ -39,7 +55,13 @@ const MyBooks: FC = () => {
         {isLoading ? (
           <SkeletonLoading height={200} count={1} />
         ) : (
-          <Gallery direction="vertical" gallery={favoriteBooks || []} />
+          <Gallery direction="horizontal" gallery={favoriteBooks || []} />
+        )}
+        <SubTitle title="Rated books" />
+        {loadingRatedBooks ? (
+          <SkeletonLoading height={200} count={1} />
+        ) : (
+          <Gallery direction="horizontal" gallery={RatedBooks || []} />
         )}
       </div>
     </Meta>

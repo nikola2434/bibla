@@ -1,3 +1,4 @@
+import { ratingApi } from "./../services/ratings/ratingApi";
 import { usersAdminApi } from "./../services/users/usersApi";
 import { uploadsFilesApi } from "./../services/files/uploadsFiles";
 import { booksAdminApi } from "./../services/books/booksAdminApi";
@@ -22,6 +23,7 @@ export const store = configureStore({
     [usersAdminApi.reducerPath]: usersAdminApi.reducer,
     [sliderApi.reducerPath]: sliderApi.reducer,
     [uploadsFilesApi.reducerPath]: uploadsFilesApi.reducer,
+    [ratingApi.reducerPath]: ratingApi.reducer,
     users: userSliceReducer,
   },
   middleware: (getDefaultMiddleware) =>
@@ -33,6 +35,7 @@ export const store = configureStore({
       authorsAdminApi.middleware,
       genresApi.middleware,
       genresAdminAPI.middleware,
+      ratingApi.middleware,
     ]),
 });
 

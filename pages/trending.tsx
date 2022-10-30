@@ -22,11 +22,11 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       props: {
         title: "Trending now",
-        description: trending.description,
-        Books: trending.PopularBooks.map(
+        description: "A list of great books that everyone should read. A selection of the most interesting and popular books.",
+        Books: trending.map(
           (item) =>
             ({
-              link: item.id,
+              link: item._id,
               poster: item.poster,
               title: item.title,
               subtitle: item.author,

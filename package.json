@@ -13,6 +13,9 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.11",
     "@reduxjs/toolkit": "^1.8.3",
     "@types/draft-js": "^0.11.9",
     "@types/draftjs-to-html": "^0.8.1",

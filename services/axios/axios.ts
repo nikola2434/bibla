@@ -13,12 +13,9 @@ export const getContentType = () => {
 
 export const PopularBooksApi = {
   async getPopularBooks() {
-    return classicAxios.get<ITrendingResponse>("trending").then((response) => {
-      return {
-        description: response.data.description,
-        PopularBooks: response.data.PopularBooks,
-      } as ITrendingResponse;
-    });
+    return classicAxios
+      .get<IBook[]>("books/populars")
+      .then((response) => response.data);
   },
 };
 

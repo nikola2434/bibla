@@ -12,7 +12,7 @@ interface IFavoriteBookProps {
 const FavoriteButton: FC<IFavoriteBookProps> = ({ bookId }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const { handleFavoriteBook } = useAddFavorite();
-  const { data, isLoading, isSuccess } = useGetProfileQuery(undefined);
+  const { data } = useGetProfileQuery(undefined);
 
   useEffect(() => {
     if (data) {

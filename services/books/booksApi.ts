@@ -33,6 +33,12 @@ export const booksApi = createApi({
         url: "books/popular",
       }),
     }),
+
+    getPopularBooks: build.query<IBook[], undefined>({
+      query: () => ({
+        url: "books/populars",
+      }),
+    }),
   }),
 });
 
@@ -40,4 +46,5 @@ export const {
   useGetAllBooksQuery,
   useGetByIdBookQuery,
   useGetPopularBookQuery,
+  useGetPopularBooksQuery,
 } = booksApi;

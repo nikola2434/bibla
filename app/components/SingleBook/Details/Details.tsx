@@ -11,6 +11,7 @@ import { IBook } from "../../../UI/types";
 import FavoriteButton from "./FavoritButton/FavoriteButton";
 import style from "./Details.module.scss";
 import { generateLink } from "../../../../config/generateLink";
+import { MyMark } from "./MyMark/MyMark";
 
 const Details: FC<{ book: IBook }> = ({ book }) => {
   const { user } = useAppSelector((state) => state.users);
@@ -55,6 +56,7 @@ const Details: FC<{ book: IBook }> = ({ book }) => {
           </div>
           {book.rating}
         </div>
+        {user && <MyMark bookId={String(query.id)} />}
       </div>
     </div>
   );

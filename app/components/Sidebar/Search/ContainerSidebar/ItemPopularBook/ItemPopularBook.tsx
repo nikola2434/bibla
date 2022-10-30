@@ -10,7 +10,7 @@ import { generateLink } from "../../../../../../config/generateLink";
 const ItemPopularBook: FC<{ book: IBook }> = ({ book }) => {
   return (
     <div>
-      <Link href={getBookUrl(book.id)}>
+      <Link href={getBookUrl(book._id)}>
         <a className={style.popular_book}>
           <Image
             src={book.poster}

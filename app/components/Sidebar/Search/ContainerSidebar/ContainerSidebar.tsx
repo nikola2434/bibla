@@ -1,19 +1,16 @@
 import { FC } from "react";
-import { useGetAllBooksQuery } from "../../../../../services/books/booksApi";
+import { useGetPopularBooksQuery } from "../../../../../services/books/booksApi";
 
 import { SkeletonLoading } from "../../../Skeleton/Skeleton";
 import ListPopularBooks from "./ListPopularBooks/ListPopularBooks";
 
 const ContainerSidebar: FC = () => {
-  const { PopularBooks, isLoading } = useGetAllBooksQuery(
-    { searchTerm: "" },
-    {
-      selectFromResult: ({ data, isLoading }) => ({
-        PopularBooks: data?.slice(0, 4),
-        isLoading,
-      }),
-    }
-  );
+  const { PopularBooks, isLoading } = useGetPopularBooksQuery(undefined, {
+    selectFromResult: ({ data, isLoading }) => ({
+      PopularBooks: data?.slice(0, 4),
+      isLoading,
+    }),
+  });
   return (
     <div>
       {isLoading ? (

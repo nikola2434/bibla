@@ -1,3 +1,4 @@
+import { StyledEngineProvider } from "@mui/material";
 import { FC, ReactNode, useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { store } from "../../../store/store";
@@ -29,7 +30,9 @@ export const MeinProvider: FC<{ children: ReactNode } & TypeCheckRoles> = ({
           UrlImage="http://localhost:3000/public/logoSeo.png"
         >
           <AuthProviders Component={{ isOnlyAdmin, isOnlyUser }}>
-            <Layout>{children}</Layout>
+            <StyledEngineProvider injectFirst>
+              <Layout>{children}</Layout>
+            </StyledEngineProvider>
           </AuthProviders>
         </Meta>
       </Provider>
