@@ -42,7 +42,7 @@ const Details: FC<{ book: IBook }> = ({ book }) => {
 
         {user && (
           <div className={style.favorite}>
-            <FavoriteButton user={user} bookId={String(query.id)} />
+            <FavoriteButton bookId={String(query.id)} />
           </div>
         )}
 

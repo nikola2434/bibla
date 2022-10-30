@@ -6,7 +6,7 @@ export const useSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const debouncedSearch = useDebounce(searchTerm, 1000);
   const { data, isSuccess } = useGetAllBooksQuery(
-    { searchTerm: debouncedSearch },
+    { searchTerm: debouncedSearch, limit: 8 },
     {
       skip: !debouncedSearch,
     }

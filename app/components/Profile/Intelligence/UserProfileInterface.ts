@@ -7,6 +7,4 @@ export interface IIntelligenceProps {
 
 export interface IChangePassword {
   login: string;
-  password: string;
-  newPassword: string;
 }

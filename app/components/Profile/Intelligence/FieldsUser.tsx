@@ -6,13 +6,11 @@ import { IChangePassword } from "./UserProfileInterface";
 interface IFieldsUserProps {
   formState: FormState<IChangePassword>;
   register: UseFormRegister<any>;
-  password: string;
 }
 
 const FieldsUser: FC<IFieldsUserProps> = ({
   register,
   formState: { errors },
-  password,
 }) => {
   return (
     <div>
@@ -26,28 +24,6 @@ const FieldsUser: FC<IFieldsUserProps> = ({
           },
         })}
         errors={errors.login}
-      />
-      <Field
-        placeholder="New password"
-        {...register("newPassword", {
-          minLength: {
-            value: 5,
-            message: "Password must be more than 5 characters",
-          },
-        })}
-        errors={errors.newPassword}
-      />
-      <Field
-        placeholder="Former password"
-        {...register("password", {
-          minLength: {
-            value: 5,
-            message: "Password must be more than 5 characters",
-          },
-          validate: (value) =>
-            value == password || "Does not match current password",
-        })}
-        errors={errors.password}
       />
     </div>
   );

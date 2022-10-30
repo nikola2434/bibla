@@ -10,12 +10,20 @@ export interface IUpdateUser {
   email?: string;
   password?: string;
   isAdmin?: boolean;
-  avatar?: string;
+}
+
+export interface IUpdateImage {
+  url: string;
+}
+
+export interface IResponseFavorite {
+  _id: string;
+  favoriteBooks: IBook[];
 }
 
 export const usersAdminApi = createApi({
   reducerPath: "usersAdminApi",
-  tagTypes: ["Users"],
+  tagTypes: ["Users", "Update"],
   baseQuery: baseQueryWithReauth,
   endpoints: (build) => ({
     getUsers: build.query<IUser[], { searchTerm?: string }>({
@@ -28,21 +36,29 @@ export const usersAdminApi = createApi({
       providesTags: ["Users"],
     }),
 
-    updateUser: build.mutation<
-      IAuthResponse,
-      { data: IUpdateUser; id: string }
-    >({
-      query: ({ data, id }) => ({
-        url: `user/${id}`,
+    updateUser: build.mutation<IAuthResponse, { data: IUpdateUser }>({
+      query: ({ data }) => ({
+        url: `user/profile`,
         body: data,
         method: "PUT",
       }),
+      invalidatesTags: ["Update"],
+    }),
+
+    updateImage: build.mutation<IAuthResponse, { data: IUpdateImage }>({
+      query: ({ data }) => ({
+        url: "user/profile/image",
+        body: data,
+        method: "PUT",
+      }),
+      invalidatesTags: ["Update"],
     }),
 
     getProfile: build.query<IUser, undefined>({
       query: () => ({
         url: `/user/profile`,
       }),
+      providesTags: ["Update"],
     }),
 
     deleteUsers: build.mutation<IAuthResponse, string>({
@@ -64,12 +80,14 @@ export const usersAdminApi = createApi({
         url: `user/favorite/${id}`,
         method: "PUT",
       }),
+      invalidatesTags: ["Update"],
     }),
 
-    getFavorite: build.query<IBook[], undefined>({
+    getFavorite: build.query<IResponseFavorite, undefined>({
       query: () => ({
         url: "user/favorites",
       }),
+      providesTags: ["Update"],
     }),
 
     getUserById: build.query<IUser, string>({
@@ -99,4 +117,5 @@ export const {
   useGetFavoriteQuery,
   useGetUserByIdQuery,
   useUpdateAdminUserMutation,
+  useUpdateImageMutation,
 } = usersAdminApi;

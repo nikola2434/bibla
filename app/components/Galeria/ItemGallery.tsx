@@ -4,6 +4,7 @@ import { FC } from "react";
 import { getAuthorUrl, getBookUrl } from "../../../config/url.config";
 import { IItemGalleryProps } from "./Gallery";
 import style from "./Gallery.module.scss";
+import spare from "../../../public/photo.png";
 
 interface IItemGallery {
   item: IItemGalleryProps;
@@ -20,7 +21,7 @@ const ItemGallery: FC<IItemGallery> = ({
         <div className={style.poster}>
           <Image
             alt={title}
-            src={poster}
+            src={poster }
             objectFit={"cover"}
             draggable={false}
             priority

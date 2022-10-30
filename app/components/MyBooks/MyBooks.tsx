@@ -15,7 +15,7 @@ const MyBooks: FC = () => {
   const { user } = useAppSelector((state) => state.users);
   const { favoriteBooks, isLoading } = useGetFavoriteQuery(undefined, {
     selectFromResult: ({ isLoading, data }) => ({
-      favoriteBooks: data?.map(
+      favoriteBooks: data?.favoriteBooks.map(
         (item) =>
           ({
             link: item._id,

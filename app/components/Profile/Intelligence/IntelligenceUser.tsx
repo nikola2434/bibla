@@ -11,18 +11,20 @@ import { useChangeUser } from "./useChangeUser";
 import cn from "classnames";
 import ImagesList from "./ImagesList/ImagesList";
 
-const IntelligenceUser: FC<IIntelligenceProps> = ({ user }) => {
+const IntelligenceUser: FC = () => {
   const { register, setValue, formState, handleSubmit } =
     useForm<IChangePassword>();
 
   const {
+    user,
+    isLoading,
     changeData,
     onSubmit,
     setChangeData,
     changeImage,
     setChangeImage,
     updateImage,
-  } = useChangeUser(setValue, user?.email);
+  } = useChangeUser(setValue);
   return (
     <div className={style.intelligence}>
       <div className={style.image}>
@@ -43,11 +45,7 @@ const IntelligenceUser: FC<IIntelligenceProps> = ({ user }) => {
         <div className={style.login_container}>
           {changeData ? (
             <form onSubmit={handleSubmit(onSubmit)} className={style.fields}>
-              <FieldsUser
-                register={register}
-                formState={formState}
-                password={user?.password || ""}
-              />
+              <FieldsUser register={register} formState={formState} />
               <Button buttonStyle={1}>Update</Button>
             </form>
           ) : (

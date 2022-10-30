@@ -1,23 +1,21 @@
-import { useAppDispatch } from "./../../../../hooks/useAppDispatch";
-import { axiosUserApi } from "../../../../services/axios/axios";
-import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { IChangePassword } from "./UserProfileInterface";
 import { SubmitHandler, UseFormSetValue } from "react-hook-form";
-import { useUpdateUserMutation } from "../../../../services/users/usersApi";
+import {
+  useGetProfileQuery,
+  useUpdateImageMutation,
+  useUpdateUserMutation,
+} from "../../../../services/users/usersApi";
 
-export const useChangeUser = (
-  setValue: UseFormSetValue<IChangePassword>,
-  login: string | undefined
-) => {
-  const { query } = useRouter();
-  const userID = String(query.id);
+export const useChangeUser = (setValue: UseFormSetValue<IChangePassword>) => {
   const [changeData, setChangeData] = useState(false);
   const [changeImage, setChangeImage] = useState(false);
 
+  const [updateImageUser] = useUpdateImageMutation();
+  const { data: user, isLoading, isSuccess } = useGetProfileQuery(undefined);
   useEffect(() => {
-    setValue("login", login || "");
-  }, [changeData]);
+    if (user) setValue("login", user.email);
+  }, [isSuccess]);
 
   const [updateUserApi] = useUpdateUserMutation();
 
@@ -25,24 +23,20 @@ export const useChangeUser = (
     await updateUserApi({
       data: {
         email: data.login,
-        password:
-          data.password === data.newPassword ? data.newPassword : data.password,
       },
-      id: userID,
     });
 
     setChangeData(false);
   };
   const updateImage = async (url: string) => {
-    const user = await axiosUserApi.getByIdUser(userID);
-    await updateUserApi({
-      id: userID,
-      data: { avatar: url },
-    });
+    await updateImageUser({ data: { url } });
+
     setChangeImage(false);
   };
 
   return {
+    user,
+    isLoading,
     onSubmit,
     changeData,
     setChangeData,
