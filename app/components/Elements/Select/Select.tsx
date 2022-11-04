@@ -4,7 +4,6 @@ import { IOption, ISelect } from "./select_interface";
 import { OnChangeValue } from "react-select";
 import ReactSelect from "react-select";
 
-
 const Select: FC<ISelect> = ({
   errors,
   placeholder,
@@ -36,7 +35,7 @@ const Select: FC<ISelect> = ({
           classNamePrefix="custom-select"
           onChange={onChange}
           value={getValues()}
-          //   components={animatedComponents}
+          //components={animatedComponents}
           isLoading={isLoading}
           options={options}
           isMulti={isMulti}

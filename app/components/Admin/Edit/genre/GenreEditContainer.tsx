@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { IMenuItems } from "../../../Navigation/Menu/MenuInterface";
 import { useUpdateGenre } from "./useUpdateGenre";
 import style from "./GenreEdit.module.scss";
 import { SkeletonLoading } from "../../../Skeleton/Skeleton";
@@ -15,6 +14,7 @@ import { DynamicSelect } from "../authors/AuthorEditContainer";
 import { IOption } from "../../../Elements/Select/select_interface";
 
 import { useGetAllBooksQuery } from "../../../../../services/books/booksApi";
+import { updateGenre } from "../../../../../services/genres/genresAdminApi";
 
 export const GenreEditContainer: FC = () => {
   const {
@@ -24,7 +24,7 @@ export const GenreEditContainer: FC = () => {
     handleSubmit,
     getValues,
     control,
-  } = useForm<IMenuItems>({ mode: "onChange" });
+  } = useForm<updateGenre>({ mode: "onChange" });
   const { isLoading, onSubmit } = useUpdateGenre(setValue);
 
   const { options, isLoading: isBooksLoading } = useGetAllBooksQuery(
@@ -75,6 +75,17 @@ export const GenreEditContainer: FC = () => {
                     required: "This field must be filled!",
                   })}
                 />
+                <div className={style.note}>
+                  Select icon in{" "}
+                  <a
+                    href="https://react-icons.github.io/react-icons/icons?name=md"
+                    target="_blank"
+                    className={style.link}
+                    rel="noreferrer"
+                  >
+                    React Icons
+                  </a>
+                </div>
               </div>
             </div>
             <div className={style.select}>
@@ -87,7 +98,7 @@ export const GenreEditContainer: FC = () => {
                     field={field}
                     placeholder="Books"
                     options={options || []}
-                    isLoading={isLoading}
+                    isLoading={isBooksLoading}
                     errors={error}
                   />
                 )}

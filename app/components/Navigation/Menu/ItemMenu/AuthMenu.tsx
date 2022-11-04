@@ -5,9 +5,7 @@ import ItemAuthMenu from "./ItemAuthMenu";
 import LogoutButton from "./LogoutButton";
 import style from "../Menu.module.scss";
 
-const AuthMenu: FC<{ setIsOpen: () => void }> = ({
-  setIsOpen,
-}) => {
+const AuthMenu: FC<{ setIsOpen: () => void }> = ({ setIsOpen }) => {
   const { user } = useAppSelector((state) => state.users);
 
   return (
@@ -19,6 +17,7 @@ const AuthMenu: FC<{ setIsOpen: () => void }> = ({
             <ItemAuthMenu
               setIsOpen={setIsOpen}
               item={{
+                _id: "22",
                 icons: "MdSettings",
                 title: "Profile",
                 link: `/profile/${user._id}`,
@@ -26,13 +25,23 @@ const AuthMenu: FC<{ setIsOpen: () => void }> = ({
             />
 
             <LogoutButton
-              item={{ icons: "MdLogout", title: "Logout", link: "/auth" }}
+              item={{
+                icons: "MdLogout",
+                title: "Logout",
+                link: "/auth",
+                _id: "21",
+              }}
             />
           </div>
         ) : (
           <ItemAuthMenu
             setIsOpen={setIsOpen}
-            item={{ icons: "MdLogin", link: "/auth", title: "Login" }}
+            item={{
+              icons: "MdLogin",
+              link: "/auth",
+              title: "Login",
+              _id: "23",
+            }}
           />
         )}
         {user?.isAdmin && (
@@ -42,6 +51,7 @@ const AuthMenu: FC<{ setIsOpen: () => void }> = ({
               icons: "MdLock",
               title: "Admin panel",
               link: "/manage/statistics",
+              _id: "24",
             }}
           />
         )}

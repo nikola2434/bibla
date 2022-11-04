@@ -16,11 +16,6 @@ import { MyMark } from "./MyMark/MyMark";
 const Details: FC<{ book: IBook }> = ({ book }) => {
   const { user } = useAppSelector((state) => state.users);
   const { push, query } = useRouter();
-
-  const fetchIdAuthor = async (title: string) => {
-    const author = await axiosAuthorApi.getAuthorByTitle(title);
-    push(getAuthorUrl(author._id));
-  };
   return (
     <div className={style.details}>
       <div className={style.image}>
@@ -37,9 +32,7 @@ const Details: FC<{ book: IBook }> = ({ book }) => {
         />
       </div>
       <div className={style.characteristics}>
-        <a className={style.author} onClick={() => fetchIdAuthor(book.author)}>
-          {book.author}
-        </a>
+        <a className={style.author}>{book.author}</a>
 
         {user && (
           <div className={style.favorite}>

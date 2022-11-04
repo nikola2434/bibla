@@ -44,7 +44,7 @@ export const AdminAuthorsContainer: FC = () => {
         </div>
         <div className={style.add_new}>
           <Button buttonStyle={2} onClick={() => createAuthor()}>
-            Add genre
+            Add author
           </Button>
         </div>
       </div>

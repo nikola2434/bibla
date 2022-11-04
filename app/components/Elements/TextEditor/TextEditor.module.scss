@@ -32,6 +32,9 @@
   height: 200px;
   z-index: -1;
   box-sizing: border-box;
+  > div {
+    z-index: -10;
+  }
   &::-webkit-scrollbar {
     width: 10px;
   }

@@ -3,29 +3,18 @@ import { IMenu } from "./MenuInterface";
 export const MenuData: IMenu = {
   title: "Menu",
   items: [
-    { title: "Home", link: "/", icons: "MdHome" },
+    { title: "Home", link: "/", icons: "MdHome", _id: "" },
     {
       title: "My books",
       link: "/MyBooks",
       icons: "MdBook",
+      _id: "",
     },
     {
       title: "Trending now",
       link: "/trending",
       icons: "MdLocalFireDepartment",
+      _id: "",
     },
   ],
 };
-
-export const BookGenres: IMenu = {
-  title: "Book genres",
-  items: [
-    { title: "Detective", link: "/detective", icons: "MdSearch" },
-    { title: "Novel", link: "/novel", icons: "MdVolunteerActivism" },
-    { title: "Adventure", link: "/adventure", icons: "MdOutlineHiking" },
-    { title: "Thriller", link: "thriller", icons: "MdOutlineMoodBad" },
-    { title: "Fantasy", link: "/fantasy", icons: "MdOutlineAutoFixHigh" },
-  ],
-};
-
-

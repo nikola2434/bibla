@@ -3,7 +3,9 @@ import { createApi } from "@reduxjs/toolkit/dist/query/react";
 
 import { baseQueryWithReauth } from "../rtqInterceptor";
 
-export type updateGenre = Omit<IMenuItems, "_id">;
+export type updateGenre = Omit<IMenuItems, "_id" | "books"> & {
+  books: string[];
+};
 
 export const genresAdminAPI = createApi({
   reducerPath: "genresAdminAPI",

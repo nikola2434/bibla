@@ -32,7 +32,7 @@ const Auth: FC = () => {
 
   const onSubmit: SubmitHandler<IForm> = (data) => {
     if (type === "login") login({ data, setError });
-    else if (type === "register") register(data);
+    else if (type === "register") register({ data, setError });
 
     reset();
   };

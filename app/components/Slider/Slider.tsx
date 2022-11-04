@@ -1,4 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import ArrowSlide from "./ArrowSlide/ArrowSlide";
 import Slide from "./Slide/Slide";
@@ -18,19 +17,13 @@ const Slider: FC<ISliderProps> = ({ slides }) => {
     <div className={style.slider}>
       {slides.length && (
         <>
-          <AnimatePresence>
-            <motion.div
-              key={slides[currentIndex].title}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className={style.slide_container}
-              transition={{
-                opacity: { duration: 1 },
-              }}
-            >
-              <Slide slide={slides[currentIndex]} />
-            </motion.div>
-          </AnimatePresence>
+          <div
+            key={slides[currentIndex].title}
+            className={style.slide_container}
+          >
+            <Slide slide={slides[currentIndex]} />
+          </div>
+
           {isNext && (
             <ArrowSlide
               direction="next"

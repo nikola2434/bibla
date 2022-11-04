@@ -12,21 +12,27 @@ export const login = createAsyncThunk<
     const AuthResponse = await userApi.login(data.login, data.password);
     return AuthResponse;
   } catch (error) {
+    setError("login", { type: "custom", message: "Wrong login or password!" });
+    setError("password", {
+      type: "custom",
+      message: "Wrong login or password!",
+    });
     return thunkApi.rejectWithValue(error);
   }
 });
 
 /* register */
-export const register = createAsyncThunk<IAuthResponse, IEmailPassword>(
-  "auth/register",
-  async ({ login, password }, thunkApi) => {
-    try {
-      return await userApi.register(login, password);
-    } catch (error) {
-      return thunkApi.rejectWithValue(error);
-    }
+export const register = createAsyncThunk<
+  IAuthResponse,
+  { data: IEmailPassword; setError: UseFormSetError<IEmailPassword> }
+>("auth/register", async ({ data, setError }, thunkApi) => {
+  try {
+    return await userApi.register(data.login, data.password);
+  } catch (error) {
+    setError("login", { type: "custom", message: "This email already exists" });
+    return thunkApi.rejectWithValue(error);
   }
-);
+});
 
 /* logout */
 export const logout = createAsyncThunk("auth/logout", async () => {

@@ -1,6 +1,4 @@
 import { FC } from "react";
-
-import { useDeleteGenreMutation } from "../../../../services/genres/genresAdminApi";
 import Button from "../../Elements/Button/Button";
 import { Heading } from "../../Heading/Heading";
 import { InputSearch } from "../../InputSearch/InputSearch";
@@ -29,7 +27,7 @@ export const AdminGenreContainer: FC = () => {
       arrayMenuItems.push([
         item.title,
         String(item.books?.length),
-        String(item._id),
+        String(item.link),
       ])
     );
     return arrayMenuItems;

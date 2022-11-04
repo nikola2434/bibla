@@ -10,7 +10,7 @@ import {
   useUpdateGenreMutation,
 } from "../../../../../services/genres/genresAdminApi";
 
-export const useUpdateGenre = (setValue: UseFormSetValue<IMenuItems>) => {
+export const useUpdateGenre = (setValue: UseFormSetValue<updateGenre>) => {
   const { push, query } = useRouter();
 
   const genreId = String(query.id);
@@ -23,9 +23,8 @@ export const useUpdateGenre = (setValue: UseFormSetValue<IMenuItems>) => {
       setValue("title", data.title);
       setValue("icons", data.icons);
       setValue("link", data.link);
-      setValue("books", data.books);
+      setValue("books", data.books?.map((book) => book._id) || []);
       setValue("description", data.description);
-      setValue("books", data.books);
     }
   }, [isSuccess]);
 
