@@ -27,7 +27,7 @@ export const AdminGenreContainer: FC = () => {
       arrayMenuItems.push([
         item.title,
         String(item.books?.length),
-        String(item.link),
+        String(item._id),
       ])
     );
     return arrayMenuItems;

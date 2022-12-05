@@ -32,6 +32,7 @@ const nextConfig = {
       "m.media-amazon.com",
       "pictures.abebooks.com",
       "localhost",
+      "77.223.98.116",
     ],
   },
 };

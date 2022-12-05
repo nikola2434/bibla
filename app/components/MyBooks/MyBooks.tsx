@@ -51,17 +51,23 @@ const MyBooks: FC = () => {
       <div className={style.my_books}>
         <Heading title="Recent activity" />
         <Description description="Here are your favorite books, as well as books you have replied to." />
-        <SubTitle title="My favorite books" />
+
         {isLoading ? (
           <SkeletonLoading height={200} count={1} />
         ) : (
-          <Gallery direction="horizontal" gallery={favoriteBooks || []} />
+          <>
+            <SubTitle title="My favorite books" />
+            <Gallery direction="horizontal" gallery={favoriteBooks || []} />
+          </>
         )}
-        <SubTitle title="Rated books" />
+
         {loadingRatedBooks ? (
           <SkeletonLoading height={200} count={1} />
         ) : (
-          <Gallery direction="horizontal" gallery={RatedBooks || []} />
+          <>
+            <SubTitle title="Rated books" />
+            <Gallery direction="horizontal" gallery={RatedBooks || []} />
+          </>
         )}
       </div>
     </Meta>

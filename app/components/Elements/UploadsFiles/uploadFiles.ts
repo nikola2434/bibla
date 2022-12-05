@@ -19,7 +19,7 @@ export const useUploadFiles: TypeUploadFile = (onChange, folder) => {
   });
 
   useEffect(() => {
-    if (res) onChange(`http://localhost:5000${res?.url}`);
+    if (res) onChange(`http://77.223.98.116:5000${res?.url}`);
   }, [isSuccess]);
 
   const uploadFile = async (e: ChangeEvent<HTMLInputElement>) => {

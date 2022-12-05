@@ -26,3 +26,27 @@
     }
   }
 }
+
+@media (max-width: $width_tablet) {
+  .container_error {
+    height: 60px;
+    .title {
+      font-size: 60px;
+      &::after {
+        height: 70px;
+      }
+    }
+  }
+}
+
+@media (max-width: $width_telephone) {
+  .container_error {
+    height: 40px;
+    .title {
+      font-size: 30px;
+      &::after {
+        height: 40px;
+      }
+    }
+  }
+}

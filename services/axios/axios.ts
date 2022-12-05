@@ -4,7 +4,7 @@ import axios from "axios";
 import { IMenuItems } from "../../app/components/Navigation/Menu/MenuInterface";
 
 export const classicAxios = axios.create({
-  baseURL: "http://localhost:5000/api/",
+  baseURL: "http://77.223.98.116:5000/api/",
 });
 
 export const getContentType = () => {
@@ -35,7 +35,7 @@ export const axiocBookApi = {
 export const axiosGenreApi = {
   async getGenre(slug: string) {
     return classicAxios
-      .get<IMenuItems>(`genre/byId/${slug}`)
+      .get<IMenuItems>(`genre/bySlug/${slug}`)
       .then((response) => response.data);
   },
   async getGenres() {
