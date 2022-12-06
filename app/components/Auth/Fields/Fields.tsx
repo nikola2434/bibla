@@ -24,7 +24,7 @@ const Fields: FC<IFieldsProps> = ({ formState: { errors }, register }) => {
       />
 
       <Field
-        placeholder="Parol"
+        placeholder="Password"
         type={"password"}
         errors={errors.password}
         {...register("password", {

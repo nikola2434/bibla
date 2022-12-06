@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 import { getContentType } from "./axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://bibla.site/api/",
   headers: getContentType(),
 });
 

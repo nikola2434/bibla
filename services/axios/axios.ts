@@ -4,7 +4,7 @@ import axios from "axios";
 import { IMenuItems } from "../../app/components/Navigation/Menu/MenuInterface";
 
 export const classicAxios = axios.create({
-  baseURL: "http://77.223.98.116:5000/api/",
+  baseURL: "https://bibla.site/api/",
 });
 
 export const getContentType = () => {

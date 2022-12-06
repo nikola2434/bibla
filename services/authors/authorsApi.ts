@@ -3,7 +3,7 @@ import { fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 import { createApi } from "@reduxjs/toolkit/dist/query/react";
 
 export const authorApi = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "http://77.223.98.116:5000/api/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://bibla.site/api/" }),
   reducerPath: "authorsApi",
   tagTypes: ["Authors"],
   endpoints: (build) => ({

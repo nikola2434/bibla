@@ -7,7 +7,7 @@ import {
 } from "@reduxjs/toolkit/dist/query/react";
 import { getTokens, logout } from "../store/user/userActions";
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://77.223.98.116:5000/api/",
+  baseUrl: "https://bibla.site/api/",
   prepareHeaders(headers) {
     const token = Cookies.get("assetToken");
     if (token) {
