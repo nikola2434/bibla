@@ -33,6 +33,8 @@ const nextConfig = {
       "pictures.abebooks.com",
       "localhost",
       "77.223.98.116",
+      "bibla.site",
+      "www.bibla.site",
     ],
   },
 };
