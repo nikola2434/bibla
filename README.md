@@ -1,3 +1,3 @@
-Admin
-Login: admin228@gmail.com
-Password : admin
+# Admin пароль
+#### Login: admin228@gmail.com
+#### Password : admin
