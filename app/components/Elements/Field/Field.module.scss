@@ -21,8 +21,8 @@
     outline-offset: 0;
     color: $mail_color;
     font-size: 18px;
-    font-family: "Roboto", sans-serif;
-
+    font-family:     "Roboto", sans-serif;
+    background-color: white;
     &:focus {
       border-bottom: $secondary_color solid 2px;
     }

@@ -7,9 +7,10 @@
   flex-wrap: nowrap;
   overflow-x: scroll;
   box-sizing: border-box;
-
+  scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
+    scrollbar-width: none;
   }
 }
 .gallery_vertical {
@@ -34,14 +35,14 @@
 
   .poster {
     border-radius: 10px;
-    box-shadow: inset 0 -80px 50px -5px rgba(0, 0, 0, 0.8);
 
     &:hover img {
       transform: scale(1.1);
     }
     .image {
       border-radius: 10px;
-      z-index: -1;
+      z-index: 1;
+      box-shadow: inset 0 -80px 50px -5px rgba(0, 0, 0, 0.8);
       transition: 1s ease-in-out;
     }
   }
@@ -54,6 +55,7 @@
     width: 100%;
     align-items: center;
     max-height: 40px;
+    background: transparent;
     .title {
       color: $color_hover;
       font-size: 20px;
@@ -64,6 +66,7 @@
       height: 50px;
       vertical-align: bottom;
       margin-bottom: 5px;
+      background: transparent;
     }
     .subtitle {
       color: $color_hover;
@@ -72,7 +75,7 @@
       font-family: "Oleo Script Swash Caps", cursive;
       text-align: center;
       max-width: 150px;
-
+      background: transparent;
       vertical-align: bottom;
     }
   }

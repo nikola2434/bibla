@@ -32,6 +32,7 @@
       font-family: "Roboto", sans-serif;
       font-size: 18px;
       display: inline-block;
+      color: black;
       &::after {
         content: "";
         display: block;
@@ -51,6 +52,7 @@
       font-size: 20px;
       margin-top: 20px;
       font-family: "Roboto", sans-serif;
+      color: black;
       .star {
         color: $color_gold;
         margin-right: 10px;

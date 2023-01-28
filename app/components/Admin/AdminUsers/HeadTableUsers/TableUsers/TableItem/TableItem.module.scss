@@ -9,7 +9,6 @@
   border: $secondary_color solid 2px;
   border-radius: 10px;
   margin-bottom: 5px;
-  background-color: white;
   font-size: 16px;
   .email {
     font-weight: 400;
@@ -20,6 +19,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
+    background: transparent;
   }
   .isAdmin {
     font-weight: 400;
@@ -33,7 +33,9 @@
     width: 200px;
     padding-left: 20px;
     justify-content: center;
+    background: transparent;
     > button {
+      
       color: $secondary_color;
       font-size: 20px;
       padding: 0;

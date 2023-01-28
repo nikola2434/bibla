@@ -28,17 +28,19 @@ export const getStaticProps: GetStaticProps = async () => {
             } as IItemGalleryProps;
           });
       });
-    const authors = await classicAxios.get<IAuthor[]>("authors").then((data) => {
-      return data.data
-        .filter((item) => item.avatar !== "")
-        .map((item) => {
-          return {
-            link: item._id,
-            poster: item.avatar,
-            title: item.nameAuthor,
-          } as IItemGalleryProps;
-        });
-    });
+    const authors = await classicAxios
+      .get<IAuthor[]>("authors")
+      .then((data) => {
+        return data.data
+          .filter((item) => item.avatar !== "")
+          .map((item) => {
+            return {
+              link: item._id,
+              poster: item.avatar,
+              title: item.nameAuthor,
+            } as IItemGalleryProps;
+          });
+      });
     return {
       props: {
         slides,
